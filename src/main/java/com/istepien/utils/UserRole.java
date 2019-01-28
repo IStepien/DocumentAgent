@@ -1,5 +1,5 @@
 package com.istepien.utils;
 
-public enum UserRoles {
+public enum UserRole {
     ADMIN, USER, MODERATOR
 }
