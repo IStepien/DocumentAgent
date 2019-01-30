@@ -13,4 +13,5 @@ public interface DocumentDao {
     public Document getDocument(Long id);
 
     public void deleteDocument(Long id);
+    public void updateDocument(Document document);
 }
