@@ -19,6 +19,8 @@ public class Document {
     private Date docDateAdded;
     @Column(name = "last_modified")
     private Date docLastModified;
+    @Column(name = "link")
+    private String link;
 
     public Document() {
     }
@@ -69,5 +71,26 @@ public class Document {
 
     public void setDocLastModified(Date docLastModified) {
         this.docLastModified = docLastModified;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    @Override
+    public String toString() {
+        return "Document{" +
+                "docId=" + docId +
+                ", docTitle='" + docTitle + '\'' +
+                ", docDescription='" + docDescription + '\'' +
+                ", docComment='" + docComment + '\'' +
+                ", docDateAdded=" + docDateAdded +
+                ", docLastModified=" + docLastModified +
+                ", link='" + link + '\'' +
+                '}';
     }
 }
