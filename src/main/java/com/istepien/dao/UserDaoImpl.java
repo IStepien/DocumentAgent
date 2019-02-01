@@ -6,21 +6,21 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Repository
 public class UserDaoImpl implements UserDao {
-    private static final Logger logger = LoggerFactory.getLogger(DocumentDaoImpl.class);
-    private SessionFactory sessionFactory;
+    private static final Logger logger = LoggerFactory.getLogger(UserDaoImpl.class);
 
-    public void setSessionFactory(SessionFactory sf) {
-        this.sessionFactory = sf;
-    }
+    @Autowired
+    private SessionFactory session;
+
 
     @Override
-    public List<User> getAlUsers() {
-        Session session = this.sessionFactory.getCurrentSession();
-        List<User> userList = session.createQuery("from User").list();
+    public List<User> getAllUsers() {
+        List<User> userList = session.openSession().createQuery("from User").list();
         for (User user : userList) {
             logger.info("User list: " + user);
         }
@@ -29,26 +29,23 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void saveUser(User user) {
-        Session session = this.sessionFactory.getCurrentSession();
-        session.save(user);
+        session.openSession().save(user);
         logger.info("User saved successfully, user details=" + user);
 
     }
 
     @Override
     public User getUser(Long id) {
-        Session session = this.sessionFactory.getCurrentSession();
-        User user = (User) session.load(User.class, new Long(id));
+        User user = (User) session.openSession().load(User.class, new Long(id));
         logger.info("User loaded successfully, user details=" + user);
         return user;
     }
 
     @Override
     public void deleteUser(Long id) {
-        Session session = this.sessionFactory.getCurrentSession();
-        User user = (User) session.load(User.class, new Long(id));
+        User user = (User) session.openSession().load(User.class, new Long(id));
         if (user != null) {
-            session.delete(user);
+            session.openSession().delete(user);
         }
         logger.info("User deleted successfully, user details=" + user);
 
@@ -56,8 +53,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void updateUser(User user) {
-        Session session = this.sessionFactory.getCurrentSession();
-        session.update(user);
+        session.openSession().update(user);
         logger.info("User updated successfully, user details=" + user);
 
     }
