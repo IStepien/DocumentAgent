@@ -11,10 +11,16 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 
 
 import javax.sql.DataSource;
+import java.sql.SQLException;
 import java.util.Properties;
 
 @Configuration
 public class DataSourceConfig {
+
+    @Bean(initMethod="start",destroyMethod="stop")
+    public org.h2.tools.Server h2WebConsonleServer () throws SQLException {
+        return org.h2.tools.Server.createWebServer("-web","-webAllowOthers","-webDaemon","-webPort", "8083");
+    }
 
     @Bean
     public LocalSessionFactoryBean sessionFactory() {
@@ -31,7 +37,7 @@ public class DataSourceConfig {
     public DataSource dataSource() {
         final DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.h2.Driver");
-        dataSource.setUrl("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;");
+        dataSource.setUrl("jdbc:h2:~/DocumentExplorer;DB_CLOSE_DELAY=-1;");
         dataSource.setUsername("sa");
         dataSource.setPassword("");
         return dataSource;
