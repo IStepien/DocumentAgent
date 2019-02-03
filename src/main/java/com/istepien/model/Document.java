@@ -1,9 +1,15 @@
 package com.istepien.model;
 
+import com.sun.deploy.security.ValidationState;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Table(name = "Document")
 public class Document {
 
     @Id
@@ -15,12 +21,20 @@ public class Document {
     private String docDescription;
     @Column(name = "comment")
     private String docComment;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "date_added")
     private Date docDateAdded;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "last_modified")
     private Date docLastModified;
-    @Column(name = "link")
-    private String link;
+    @Column(name = "file")
+    @Lob
+    private byte[] file;
+
+//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+//    @JoinColumn(name = "user_id", nullable = false)
+//    @OnDelete(action = OnDeleteAction.CASCADE)
+//    private User user;
 
     public Document() {
     }
@@ -73,13 +87,21 @@ public class Document {
         this.docLastModified = docLastModified;
     }
 
-    public String getLink() {
-        return link;
+    public byte[] getFile() {
+        return file;
     }
 
-    public void setLink(String link) {
-        this.link = link;
+    public void setFile(byte[] file) {
+        this.file = file;
     }
+
+    //    public User getUser() {
+//        return user;
+//    }
+//
+//    public void setUser(User user) {
+//        this.user = user;
+//    }
 
     @Override
     public String toString() {
@@ -90,7 +112,8 @@ public class Document {
                 ", docComment='" + docComment + '\'' +
                 ", docDateAdded=" + docDateAdded +
                 ", docLastModified=" + docLastModified +
-                ", link='" + link + '\'' +
+                ", file='" + file + '\'' +
+//                ", user=" + user +
                 '}';
     }
 }

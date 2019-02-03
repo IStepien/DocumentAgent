@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Documents</title>
+</head>
+<body>
+<p>List of documents</p>
+
+<table>
+
+<tr>
+    <th>id:</th>
+    <th>title:</th>
+    <th>comment:</th>
+    <th>date added:</th>
+    <th>date modified:</th>
+    <th>modify:</th>
+</tr>
+    <tr th:each="doc : ${documentList}">
+        <td th:text="*{doc.docId}" />
+        <td th:text="*{doc.docTitle}" />
+        <td th:text="*{doc.docComment}" />
+        <td th:text="*{doc.docDateAdded}" />
+        <td th:text="*{doc.docLastModified}" />
+        <td>   <label th:for="${#ids.next('covered')}" th:text="#{seedstarter.covered}">Covered</label>
+            <input type="checkbox" th:field="*{covered}" /></td>
+    </tr>
+</table>
+</body>
+</html>
