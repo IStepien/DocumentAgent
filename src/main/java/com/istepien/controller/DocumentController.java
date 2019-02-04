@@ -7,10 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,12 +29,14 @@ public class DocumentController {
 
         return "add-document";
     }
+
     @PostMapping("/saveDocument")
-    public String saveUser(@ModelAttribute("user") Document document){
+    public String saveDocument(@ModelAttribute("document") Document document) {
         documentService.saveDocument(document);
 
         return "home-page";
     }
+
     @GetMapping("/list")
     public String listDocuments(Model model) {
 
@@ -47,4 +46,24 @@ public class DocumentController {
 
         return "document-list";
     }
+
+    @GetMapping("/deleteDocument")
+    public String deleteDocument(@RequestParam(name = "docId") Long docId) {
+
+        documentService.deleteDocument(docId);
+
+        return "redirect:list";
+    }
+
+    @GetMapping("/formForUpdateDocument")
+    public String showFormForUpdateDocument(@RequestParam(name = "docId") Long docId, Model model) {
+
+        Document doc = documentService.getDocument(docId);
+
+        model.addAttribute("document", doc);
+
+        return "update-document";
+    }
+
+
 }

@@ -36,13 +36,8 @@ public class DocumentServiceImpl implements DocumentService {
     @Override
     @Transactional
     public void deleteDocument(Long id) {
-    documentDao.deleteDocument(id);
+        documentDao.deleteDocument(id);
     }
 
-    @Override
-    @Transactional
-    public void updateDocument(Document document) {
-        documentDao.updateDocument(document);
 
-    }
 }

@@ -8,6 +8,8 @@ import org.springframework.dao.annotation.PersistenceExceptionTranslationPostPro
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl;
 
 
 import javax.sql.DataSource;
@@ -37,7 +39,7 @@ public class DataSourceConfig {
     public DataSource dataSource() {
         final DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.h2.Driver");
-        dataSource.setUrl("jdbc:h2:~/DocumentExplorer;DB_CLOSE_DELAY=-1;");
+        dataSource.setUrl("jdbc:h2:~/docEx;DB_CLOSE_DELAY=-1;");
         dataSource.setUsername("sa");
         dataSource.setPassword("");
         return dataSource;
@@ -70,5 +72,14 @@ public class DataSourceConfig {
             }
         };
     }
+//    @Bean(name = "userDetailsService")
+//    public UserDetailsService userDetailsService() {
+//        JdbcDaoImpl jdbcImpl = new JdbcDaoImpl();
+//        jdbcImpl.setDataSource(dataSource());
+//        jdbcImpl.setUsersByUsernameQuery("select username, password, enabled from users where username=?");
+//        jdbcImpl.setAuthoritiesByUsernameQuery("select username, role from user_roles where username=?");
+//
+//        return jdbcImpl;
+//    }
 
 }

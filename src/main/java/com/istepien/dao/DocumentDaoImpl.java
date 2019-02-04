@@ -1,6 +1,7 @@
 package com.istepien.dao;
 
 import com.istepien.model.Document;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
@@ -15,12 +16,14 @@ public class DocumentDaoImpl implements DocumentDao{
 
 
     @Autowired
-   private SessionFactory session;
+   private SessionFactory sessionfactory;
 
     @Override
     public List<Document> getAllDocuments() {
-
-        List<Document> documentList = session.openSession().createQuery("from Document").list();
+        Session sessionObj =  sessionfactory.openSession();
+        sessionObj.beginTransaction();
+        List<Document> documentList = sessionObj.createQuery("from Document").list();
+        sessionObj.getTransaction().commit();
         for(Document document : documentList){
             logger.info("Document list:"+document);
         }
@@ -29,31 +32,32 @@ public class DocumentDaoImpl implements DocumentDao{
 
     @Override
     public void saveDocument(Document document) {
-
-        session.openSession().save(document);
-        logger.info("Document saved successfully, document details="+document);
+        Session sessionObj =  sessionfactory.openSession();
+        sessionObj.beginTransaction();
+        sessionObj.saveOrUpdate(document);
+        sessionObj.getTransaction().commit();
     }
 
     @Override
     public Document getDocument(Long id) {
-        Document document= (Document) session.openSession().load(Document.class, new Long(id));
+        Session sessionObj = sessionfactory.openSession();
+        sessionObj.beginTransaction();
+        Document document= (Document) sessionObj.load(Document.class, new Long(id));
+        sessionObj.getTransaction().commit();
         logger.info("Document loaded successfully, document details="+document);
         return document;
     }
 
     @Override
     public void deleteDocument(Long id) {
-
-        Document doc = (Document) session.openSession().load(Document.class, new Long(id));
-        if(doc != null){
-            session.openSession().delete(doc);
-        }
+        Session sessionObj = sessionfactory.openSession();
+        sessionObj.beginTransaction();
+        Document doc = sessionObj.load(Document.class, new Long(id));
+        sessionObj.delete(doc);
+        sessionObj.getTransaction().commit();
         logger.info("Document deleted successfully, document details="+doc);
+        sessionObj.close();
     }
 
-    @Override
-    public void updateDocument(Document document) {
-        session.openSession().update(document);
-        logger.info("Document updated successfully, document details="+document);
-    }
+
 }

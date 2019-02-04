@@ -12,5 +12,4 @@ public interface DocumentService {
     public Document getDocument(Long id);
 
     public void deleteDocument(Long id);
-    public void updateDocument(Document document);
 }

@@ -15,16 +15,20 @@
     <th>comment:</th>
     <th>date added:</th>
     <th>date modified:</th>
-    <th>modify:</th>
+    <th>button</th>
+    <th></th>
+    <th></th>
+    <th></th>
 </tr>
-    <tr th:each="doc : ${documentList}">
-        <td th:text="*{doc.docId}" />
-        <td th:text="*{doc.docTitle}" />
-        <td th:text="*{doc.docComment}" />
-        <td th:text="*{doc.docDateAdded}" />
-        <td th:text="*{doc.docLastModified}" />
-        <td>   <label th:for="${#ids.next('covered')}" th:text="#{seedstarter.covered}">Covered</label>
-            <input type="checkbox" th:field="*{covered}" /></td>
+    <tr th:each="document : ${documentList}">
+        <td th:text="${document.docId}" />
+        <td th:text="${document.docTitle}" />
+        <td th:text="${document.docComment}" />
+        <td th:text="${document.docDateAdded}" />
+        <td th:text="${document.docLastModified}" />
+        <td><a th:href="@{/documents/deleteDocument(docId=${document.docId})}">delete</a></td>
+        <td><a th:href="@{/documents/formForUpdateDocument(docId=${document.docId})}">modify</a></td>
+
     </tr>
 </table>
 </body>

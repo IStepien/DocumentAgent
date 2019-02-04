@@ -5,13 +5,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/")
 public class Home {
 
-    @RequestMapping
+    @RequestMapping("/")
     public String goHome(){
 
-        return "index";
+        return "home-page";
     }
 
 
