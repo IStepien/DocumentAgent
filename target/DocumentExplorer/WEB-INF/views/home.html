@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Start</title>
+</head>
+<body>
+Authenticated username:
+<div sec:authentication ="principal.username"> </div>
+Authenticated user roles:
+<div sec:authentication ="principal.authorities"> </div>
+<div sec:authorize="hasRole('ROLE_ADMIN')">    here is something visible for admin only </button>
+</div>
+<p>start</p>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="logout">
+</form>
+</body>
+</html>

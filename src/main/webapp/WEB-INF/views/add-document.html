@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Adding document</title>
+</head>
+<body>
+<form action="#" th:action="@{saveDocument}" th:object="${document}" method="post">
+    <p>docTitlee: <input type="text" th:field="*{docTitle}" /></p>
+    <p>docDescription: <input type="text" th:field="*{docDescription}" /></p>
+    <p>docComment: <input type="text" th:field="*{docComment}" /></p>
+    <p>date added: <input type="date" th:field="*{docDateAdded}"/></p>
+    <p>date modified: <input type="date" th:field="*{docLastModified}"/></p>
+    <p>file: <input type="file" th:field="*{file}" name="file"></p>
+
+
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+</body>
+</html>

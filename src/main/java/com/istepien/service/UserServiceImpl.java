@@ -1,18 +1,39 @@
 package com.istepien.service;
 
+import com.istepien.dao.RoleDao;
 import com.istepien.dao.UserDao;
 import com.istepien.model.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+
+import java.util.HashSet;
 import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
 
+    private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+
+
     @Autowired
     private UserDao userDao;
+    @Autowired
+    private RoleDao roleDao;
+    private final PasswordEncoder passwordEncoder;
+
+
+    public UserServiceImpl(UserDao userDao, RoleDao roleDao, PasswordEncoder passwordEncoder) {
+        this.userDao = userDao;
+        this.roleDao = roleDao;
+        this.passwordEncoder = passwordEncoder;
+    }
+
+
 
     @Override
     @Transactional
@@ -22,7 +43,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public void saveUser(User user) {
+    public void saveUser(User user)
+    {
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setRoles(new HashSet<>(roleDao.getAllRoles()));
+
         userDao.saveUser(user);
     }
 
@@ -30,6 +55,11 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public User getUser(Long id) {
         return userDao.getUser(id);
+    }
+
+    @Override
+    public User getUserByName(String userName) {
+        return userDao.getUserByName(userName);
     }
 
     @Override

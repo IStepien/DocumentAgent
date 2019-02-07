@@ -1,6 +1,5 @@
 package com.istepien.dao;
 
-import com.istepien.model.Document;
 import com.istepien.model.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -15,12 +14,15 @@ public class UserDaoImpl implements UserDao {
     private static final Logger logger = LoggerFactory.getLogger(UserDaoImpl.class);
 
     @Autowired
-    private SessionFactory session;
+    private SessionFactory sessionFactory;
 
 
     @Override
     public List<User> getAllUsers() {
-        List<User> userList = session.openSession().createQuery("from User").list();
+        Session sessionObj =  sessionFactory.openSession();
+        sessionObj.beginTransaction();
+        List<User> userList = sessionObj.createQuery("from User").list();
+        sessionObj.getTransaction().commit();
         for (User user : userList) {
             logger.info("User list: " + user);
         }
@@ -29,31 +31,56 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void saveUser(User user) {
-        session.openSession().save(user);
+        Session sessionObj =  sessionFactory.openSession();
+        sessionObj.beginTransaction();
+        sessionObj.save(user);
+        sessionObj.getTransaction().commit();
         logger.info("User saved successfully, user details=" + user);
 
     }
 
     @Override
     public User getUser(Long id) {
-        User user = (User) session.openSession().load(User.class, new Long(id));
+        Session sessionObj =  sessionFactory.openSession();
+        sessionObj.beginTransaction();
+        User user = sessionObj.load(User.class, new Long(id));
+        sessionObj.getTransaction().commit();
         logger.info("User loaded successfully, user details=" + user);
         return user;
     }
 
     @Override
+    public User getUserByName(String username) {
+        Session sessionObj =  sessionFactory.openSession();
+        sessionObj.beginTransaction();
+        User user = (User)sessionObj
+                .createQuery("from User where username=:username")
+                .setParameter("username", username)
+                .getSingleResult();
+        sessionObj.getTransaction().commit();
+        logger.info("User found successfully, user details=" + user);
+        return user;
+    }
+
+    @Override
     public void deleteUser(Long id) {
-        User user = (User) session.openSession().load(User.class, new Long(id));
+        Session sessionObj =  sessionFactory.openSession();
+        sessionObj.beginTransaction();
+        User user = sessionObj.load(User.class, new Long(id));
         if (user != null) {
-            session.openSession().delete(user);
+            sessionObj.delete(user);
         }
+        sessionObj.getTransaction().commit();
         logger.info("User deleted successfully, user details=" + user);
 
     }
 
     @Override
     public void updateUser(User user) {
-        session.openSession().update(user);
+        Session sessionObj =  sessionFactory.openSession();
+        sessionObj.beginTransaction();
+        sessionObj.update(user);
+        sessionObj.getTransaction().commit();
         logger.info("User updated successfully, user details=" + user);
 
     }

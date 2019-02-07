@@ -1,34 +1,60 @@
 package com.istepien.model;
-
-import com.istepien.utils.UserRole;
-
 import javax.persistence.*;
+import java.util.Set;
 
 
 @Entity
+@Table(name = "users")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int id;
-    @Column(name = "first_name")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long userId;
+    @Column
+    private String username;
+    @Column
     private String firstName;
-    @Column(name = "last_name")
+    @Column
     private String lastName;
-    @Column(name = "email")
+    @Column
     private String email;
-    @Column(name = "role")
-    private UserRole role;
+    @ManyToMany
+    @JoinTable(name = "user_role",
+            joinColumns = @JoinColumn(name = "userId"),
+            inverseJoinColumns = @JoinColumn(name = "roleId"))
+    private Set<Role> roles;
+    @Column
+    private String password;
+//    @OneToMany(mappedBy = "users")
+//    private Set<Document> documentSet;
+
+
+    public User(String username, String firstName, String lastName, String email, Set<Role> roles, String password) {
+        this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.roles = roles;
+        this.password = password;
+    }
 
     public User() {
     }
 
-    public int getId() {
-        return id;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getFirstName() {
@@ -55,22 +81,38 @@ public class User {
         this.email = email;
     }
 
-    public UserRole getRole() {
-        return role;
+    //    public Set<Document> getDocumentSet() {
+//        return documentSet;
+//    }
+
+   // public void setDocumentSet(Set<Document> documentSet) {
+    //    this.documentSet = documentSet;
+    //}
+
+    public Set<Role> getRoles() {
+        return roles;
     }
 
-    public void setRole(UserRole role) {
-        this.role = role;
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
+                "userId=" + userId +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
-                ", role=" + role +
+             //   ", documentSet=" + documentSet +
                 '}';
     }
 }

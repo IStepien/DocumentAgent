@@ -23,6 +23,7 @@
     <hibernate.version>5.4.1.Final</hibernate.version>
     <slf4jVersion>1.6.2</slf4jVersion>
     <springSecurity.version>5.1.2.RELEASE</springSecurity.version>
+    <thymeleaf-security>3.0.4.RELEASE</thymeleaf-security>
 
   </properties>
 
@@ -112,6 +113,11 @@
       <groupId>org.springframework.security</groupId>
       <artifactId>spring-security-config</artifactId>
       <version>${springSecurity.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.thymeleaf.extras</groupId>
+      <artifactId>thymeleaf-extras-springsecurity5</artifactId>
+      <version>${thymeleaf-security}</version>
     </dependency>
 
   </dependencies>
