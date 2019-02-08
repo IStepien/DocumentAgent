@@ -31,10 +31,10 @@ public class Document {
     @Lob
     private byte[] file;
 
-//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-//    @JoinColumn(name = "user_id", nullable = false)
-//    @OnDelete(action = OnDeleteAction.CASCADE)
-//    private User user;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "user_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private User user;
 
     public Document() {
     }
@@ -95,13 +95,13 @@ public class Document {
         this.file = file;
     }
 
-    //    public User getUser() {
-//        return user;
-//    }
-//
-//    public void setUser(User user) {
-//        this.user = user;
-//    }
+        public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     @Override
     public String toString() {
@@ -113,7 +113,7 @@ public class Document {
                 ", docDateAdded=" + docDateAdded +
                 ", docLastModified=" + docLastModified +
                 ", file='" + file + '\'' +
-//                ", user=" + user +
+                ", user=" + user +
                 '}';
     }
 }

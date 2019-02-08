@@ -8,71 +8,16 @@
   <component name="ChangeListManager">
     <list default="true" id="cb57c26c-747b-4f46-89f6-ad500e8c5b3a" name="Default Changelist" comment="Document CRUD">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/istepien/config/DataSourceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/istepien/config/DataSourceConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/istepien/controller/DocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/istepien/controller/DocumentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/istepien/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/istepien/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/istepien/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/istepien/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/istepien/dao/RoleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/istepien/dao/RoleDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/istepien/dao/RoleDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/istepien/dao/RoleDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/istepien/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/istepien/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/istepien/dao/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/istepien/dao/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/istepien/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/istepien/model/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/istepien/service/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/istepien/service/UserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/istepien/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/istepien/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/istepien/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/istepien/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/istepien/model/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/istepien/model/Document.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/istepien/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/istepien/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/add-document.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/add-document.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/document-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/document-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/success.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/config/DataSourceConfig$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/config/DataSourceConfig$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/config/DataSourceConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/config/DataSourceConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/config/SecurityWebInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/config/SecurityWebInitializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/config/WebConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/config/WebInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/config/WebInitializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/controller/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/dao/DocumentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/dao/DocumentDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/dao/DocumentDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/dao/DocumentDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/dao/RoleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/dao/RoleDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/dao/RoleDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/dao/RoleDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/dao/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/dao/UserDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/document-menu.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/model/Document.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/model/Document.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/model/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/model/Role.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/service/DocumentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/service/DocumentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/service/DocumentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/service/DocumentServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/service/SecurityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/service/SecurityServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/service/UserDetailsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/service/UserDetailsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/service/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/views/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/views/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/config/DataSourceConfig$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/istepien/config/DataSourceConfig$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/config/DataSourceConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/istepien/config/DataSourceConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/istepien/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/config/SecurityWebInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/istepien/config/SecurityWebInitializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/istepien/config/WebConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/config/WebInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/istepien/config/WebInitializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/istepien/controller/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/istepien/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/dao/DocumentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/istepien/dao/DocumentDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/dao/DocumentDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/istepien/dao/DocumentDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/dao/RoleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/istepien/dao/RoleDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/dao/RoleDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/istepien/dao/RoleDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/istepien/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/dao/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/istepien/dao/UserDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/views/add-document.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/views/add-document.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/model/Document.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/istepien/model/Document.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/model/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/istepien/model/Role.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/istepien/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/service/DocumentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/istepien/service/DocumentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/service/DocumentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/istepien/service/DocumentServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/service/SecurityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/istepien/service/SecurityServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/service/UserDetailsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/istepien/service/UserDetailsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/istepien/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/istepien/service/UserServiceImpl.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -135,11 +80,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserDaoImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/istepien/dao/UserDaoImpl.java">
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/istepien/controller/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="96" column="26" selection-start-line="96" selection-start-column="26" selection-end-line="96" selection-end-column="26" />
+            <state relative-caret-position="502">
+              <caret line="61" column="43" selection-start-line="61" selection-start-column="43" selection-end-line="61" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -147,11 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/istepien/controller/HomeController.java">
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/istepien/model/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-end-line="16" />
+            <state relative-caret-position="112">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -159,11 +104,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.html">
+      <file leaf-file-name="Document.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/istepien/model/Document.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="15" column="3" selection-start-line="15" selection-end-line="16" />
+            <state relative-caret-position="237">
+              <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2280#2281#0" expanded="true" />
+                <element signature="e#2307#2308#0" expanded="true" />
+                <element signature="e#2345#2346#0" expanded="true" />
+                <element signature="e#2377#2378#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -171,8 +123,8 @@
       <file leaf-file-name="add-document.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/add-document.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="19" column="62" lean-forward="true" selection-start-line="19" selection-end-line="20" />
+            <state relative-caret-position="169">
+              <caret line="16" column="95" lean-forward="true" selection-start-line="16" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -186,11 +138,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="document-list.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="document-list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/document-list.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="237">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
+              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
             </state>
           </provider>
         </entry>
@@ -204,11 +156,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DocumentController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DocumentController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/istepien/controller/DocumentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+            <state relative-caret-position="220">
+              <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -216,20 +168,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="document-menu.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/document-menu.html">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" selection-start-line="7" selection-end-line="11" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataSourceConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/istepien/config/DataSourceConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="70" column="58" selection-start-line="70" selection-start-column="58" selection-end-line="70" selection-end-column="58" />
+            <state relative-caret-position="186">
+              <caret line="15" column="3" selection-start-line="15" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -283,7 +226,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/istepien/dao/DocumentDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/istepien/service/DocumentService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/istepien/service/DocumentServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/istepien/model/Document.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/istepien/config/SecurityWebInitializer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/istepien/config/WebInitializer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/istepien/service/SecurityService.java" />
@@ -294,7 +236,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/start.html" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user-management.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/istepien/model/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/istepien/config/WebConfig.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login-page.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/istepien/config/SecurityConfig.java" />
@@ -314,9 +255,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/istepien/config/DataSourceConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/istepien/dao/UserDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/document-list.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/istepien/model/Document.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/istepien/model/User.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/add-document.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/istepien/controller/DocumentController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/document-list.html" />
       </list>
     </option>
   </component>
@@ -616,7 +559,7 @@
       <workItem from="1549339645657" duration="15454000" />
       <workItem from="1549425442092" duration="26719000" />
       <workItem from="1549517434574" duration="26078000" />
-      <workItem from="1549599117083" duration="5876000" />
+      <workItem from="1549599117083" duration="9114000" />
     </task>
     <task id="LOCAL-00001" summary="Document CRUD">
       <created>1549312779424</created>
@@ -629,7 +572,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176633000" />
+    <option name="totallyTimeSpent" value="179871000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -654,10 +597,10 @@
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32838285" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.32838285" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.47359735" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.47359735" />
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26399395" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26399395" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info id="Favorites" order="5" side_tool="true" />
@@ -702,16 +645,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/istepien/model/Document.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="114" column="29" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -817,16 +750,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/istepien/service/DocumentServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/istepien/model/Role.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -889,16 +812,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/istepien/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="61" column="43" selection-start-line="61" selection-start-column="43" selection-end-line="61" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/istepien/dao/RoleDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -934,16 +847,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
           <caret line="85" column="31" selection-start-line="85" selection-start-column="31" selection-end-line="85" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/istepien/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -991,13 +894,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/document-menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login-page.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1005,13 +901,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/istepien/controller/DocumentController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/document-list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+        <state relative-caret-position="237">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/istepien/service/DocumentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/istepien/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/istepien/model/Document.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2280#2281#0" expanded="true" />
+            <element signature="e#2307#2308#0" expanded="true" />
+            <element signature="e#2345#2346#0" expanded="true" />
+            <element signature="e#2377#2378#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/document-menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="11" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -1024,15 +958,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/add-document.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="19" column="62" lean-forward="true" selection-start-line="19" selection-end-line="20" />
+        <state relative-caret-position="169">
+          <caret line="16" column="95" lean-forward="true" selection-start-line="16" selection-end-line="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/document-list.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/istepien/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        <state relative-caret-position="502">
+          <caret line="61" column="43" selection-start-line="61" selection-start-column="43" selection-end-line="61" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/istepien/controller/DocumentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

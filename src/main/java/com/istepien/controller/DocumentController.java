@@ -1,7 +1,10 @@
 package com.istepien.controller;
 
 import com.istepien.model.Document;
+import com.istepien.model.User;
 import com.istepien.service.DocumentService;
+import com.istepien.service.UserService;
+import com.istepien.service.UserServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,11 +12,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 @Controller
 @RequestMapping("/documents")
 public class DocumentController {
+
+    @Autowired
+    UserService userService;
 
     private static final Logger logger = LoggerFactory.getLogger(DocumentController.class);
 
@@ -31,7 +38,9 @@ public class DocumentController {
     }
 
     @PostMapping("/saveDocument")
-    public String saveDocument(@ModelAttribute("document") Document document) {
+    public String saveDocument(@ModelAttribute("document") Document document, Principal principal) {
+        User current = userService.getUserByName(principal.getName());
+        document.setUser(current);
         documentService.saveDocument(document);
 
         return "home";

@@ -25,8 +25,8 @@ public class User {
     private Set<Role> roles;
     @Column
     private String password;
-//    @OneToMany(mappedBy = "users")
-//    private Set<Document> documentSet;
+    @OneToMany(mappedBy = "user")
+    private Set<Document> documentSet;
 
 
     public User(String username, String firstName, String lastName, String email, Set<Role> roles, String password) {
