@@ -10,7 +10,7 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int roleId;
     @Column
-    private String roleName;
+    private String rolename;
     @ManyToMany(mappedBy = "roles")
     private Set<User> users;
 
@@ -25,12 +25,12 @@ public class Role {
         this.roleId = roleId;
     }
 
-    public String getRoleName() {
-        return roleName;
+    public String getRolename() {
+        return rolename;
     }
 
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
+    public void setRolename(String rolename) {
+        this.rolename = rolename;
     }
 
     public Set<User> getUsers() {

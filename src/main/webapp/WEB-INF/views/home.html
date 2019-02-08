@@ -12,6 +12,11 @@ Authenticated user roles:
 <div sec:authentication ="principal.authorities"> </div>
 <div sec:authorize="hasRole('ROLE_ADMIN')">    here is something visible for admin only </button>
 </div>
+<div>
+    <button type="button"><a th:href="@{/documents/formForAddDocument}">Add document</a> </button>
+    <button type="button"><a th:href="@{/documents/list}">List of documents</a> </button>
+
+</div>
 <p>start</p>
 <form th:action="@{/logout}" method="post">
     <input type="submit" value="logout">

@@ -68,6 +68,7 @@ public class DataSourceConfig {
                         "hibernate.hbm2ddl.auto", "create-drop");
                 setProperty(
                         "hibernate.dialect", "org.hibernate.dialect.H2Dialect");
+                setProperty("hibernate.show_sql", "true");
             }
         };
     }

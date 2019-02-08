@@ -9,20 +9,25 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+
 @Repository
 public class RoleDaoImpl implements RoleDao {
 
-    private static final Logger logger = LoggerFactory.getLogger(UserDaoImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(RoleDaoImpl.class);
 
     @Autowired
     private SessionFactory sessionFactory;
 
     @Override
-    public List<Role> getAllRoles() {
+    public Set<Role> getAllRoles() {
+        Set<Role> roles = new HashSet<>();
         Session sessionObj = sessionFactory.openSession();
         sessionObj.beginTransaction();
-        List<Role> roles = sessionObj.createQuery("from Role").list();
+        List<Role> roleList = sessionObj.createQuery("from Role").list();
+        roles.addAll(roleList);
         sessionObj.getTransaction().commit();
         for (Role role : roles) {
             logger.info("Role list: " + role);
@@ -31,12 +36,18 @@ public class RoleDaoImpl implements RoleDao {
     }
 
     @Override
-    public Role getRoleByName(String roleName) {
-        Session sessionObj =  sessionFactory.openSession();
+    public Role getRoleByName(String rolename) {
+        Session sessionObj = sessionFactory.openSession();
         sessionObj.beginTransaction();
-        Role theRole = (Role) sessionObj.load(Role.class, roleName);
+        Role theRole = (Role) sessionObj
+                .createQuery("from Role where rolename = :rolename")
+                .setParameter("rolename", rolename)
+                .getSingleResult();
+
         sessionObj.getTransaction().commit();
-        logger.info("Role loaded successfully, role details=" + theRole);
-        return theRole;      }
+        logger.info("Role loaded successfully, role details=" + theRole.getRolename() + theRole.getRoleId() + theRole.getUsers());
+
+        return theRole;
+    }
 
 }

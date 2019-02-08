@@ -1,12 +1,11 @@
-package com.istepien.dao;
+package com.istepien.service;
 
 import com.istepien.model.Role;
 
 import java.util.List;
 import java.util.Set;
 
-public interface RoleDao {
+public interface RoleService {
     public Set<Role> getAllRoles();
-    public Role getRoleByName(String rolename);
-
+    public Role getRoleByName(String roleName);
 }

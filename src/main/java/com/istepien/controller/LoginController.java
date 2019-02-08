@@ -2,6 +2,7 @@ package com.istepien.controller;
 
 import com.istepien.model.Role;
 import com.istepien.model.User;
+import com.istepien.service.RoleService;
 import com.istepien.service.SecurityServiceImpl;
 import com.istepien.service.UserService;
 import org.slf4j.Logger;
@@ -27,51 +28,41 @@ public class LoginController {
     @Autowired
     private UserService userService;
     @Autowired
+    private RoleService roleService;
+
+    @Autowired
     private final SecurityServiceImpl securityServiceImpl;
 
     public LoginController(UserService userService, SecurityServiceImpl securityServiceImpl) {
-        this.userService=userService;
+        this.userService = userService;
         this.securityServiceImpl = securityServiceImpl;
     }
+
     @GetMapping("/showLoginPage")
-    public String showLoginPage(){
+    public String showLoginPage() {
         logger.info("i am in showLoginPage");
 
         return "login-page";
     }
 
 
-//    @GetMapping("/registration")
-//    public String registration(Model model){
-//        logger.info("I am in get registration");
-//        model.addAttribute("user", new User());
-//        return "register";
-//    }
-//
-//    @PostMapping("/registration")
-//    public String registration(@ModelAttribute("user") User user,  Model model){
-//        logger.info("I am in post registration");
-//
-//        userService.saveUser(user);
-//        securityServiceImpl.login(user.getUsername(), user.getPassword());
-//
-//        return "redirect:/success";
-//    }
-//
-//    @PostMapping("/login")
-//    public String login(Model model, String error, String logout){
-//logger.info("I am in LoginController, login method");
-//        if (error !=null){
-//            model.addAttribute("error", "Your username and password is invalid");
-//        }
-//
-//        if (logout !=null){
-//            model.addAttribute("message", "Logged out successfully");
-//        }
-//
-//        return "document-list";
-//    }
+    @GetMapping("/registration")
+    public String registration(Model model) {
+        logger.info("I am in get registration");
+
+        model.addAttribute("user", new User());
+        return "register";
+    }
 
 
+    @PostMapping("/registration")
+    public String registration(@ModelAttribute("user") User user, Model model) {
+        logger.info("I am in post registration");
+
+        userService.registerNewUserAccount(user);
+        securityServiceImpl.login(user.getUsername(), user.getPassword());
+
+        return "redirect:/success";
+    }
 
 }

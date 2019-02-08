@@ -2,6 +2,7 @@ package com.istepien.service;
 
 import com.istepien.dao.RoleDao;
 import com.istepien.dao.UserDao;
+import com.istepien.model.Role;
 import com.istepien.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -34,7 +36,6 @@ public class UserServiceImpl implements UserService {
     }
 
 
-
     @Override
     @Transactional
     public List<User> getAllUsers() {
@@ -43,8 +44,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public void saveUser(User user)
-    {
+    public void saveUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setRoles(new HashSet<>(roleDao.getAllRoles()));
 
@@ -72,6 +72,21 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public void updateUser(User user) {
         userDao.updateUser(user);
+
+    }
+
+    @Override
+    @Transactional
+    public void registerNewUserAccount(User user) {
+        logger.info("i am in register newUser method 1");
+        Role role = roleDao.getRoleByName("ROLE_USER");
+        logger.info("i am in register newUser method 2"+role.getRolename());
+        userDao.saveUser(user);
+        logger.info("i am in register newUser method 3" +user.getUserId());
+        userDao.getUserRoles(1L);
+        logger.info("i am in register newUser method 4" + userDao.getUserRoles(user.getUserId()));
+
+        logger.info("i am in register newUser method, step 3" + user.getRoles() + user.getUsername());
 
     }
 }
