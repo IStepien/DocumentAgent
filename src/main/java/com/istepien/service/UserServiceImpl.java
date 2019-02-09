@@ -78,15 +78,14 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public void registerNewUserAccount(User user) {
-        logger.info("i am in register newUser method 1");
+
         Role role = roleDao.getRoleByName("ROLE_USER");
-        logger.info("i am in register newUser method 2"+role.getRolename());
+
+        Set<Role> roleSet = new HashSet<>();
+
+        roleSet.add(role);
+        user.setRoles(roleSet);
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         userDao.saveUser(user);
-        logger.info("i am in register newUser method 3" +user.getUserId());
-        userDao.getUserRoles(1L);
-        logger.info("i am in register newUser method 4" + userDao.getUserRoles(user.getUserId()));
-
-        logger.info("i am in register newUser method, step 3" + user.getRoles() + user.getUsername());
-
     }
 }

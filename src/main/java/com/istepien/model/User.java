@@ -81,13 +81,13 @@ public class User {
         this.email = email;
     }
 
-    //    public Set<Document> getDocumentSet() {
-//        return documentSet;
-//    }
+        public Set<Document> getDocumentSet() {
+        return documentSet;
+    }
 
-   // public void setDocumentSet(Set<Document> documentSet) {
-    //    this.documentSet = documentSet;
-    //}
+    public void setDocumentSet(Set<Document> documentSet) {
+        this.documentSet = documentSet;
+    }
 
     public Set<Role> getRoles() {
         return roles;
@@ -112,7 +112,7 @@ public class User {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
-             //   ", documentSet=" + documentSet +
+               ", documentSet=" + documentSet +
                 '}';
     }
 }

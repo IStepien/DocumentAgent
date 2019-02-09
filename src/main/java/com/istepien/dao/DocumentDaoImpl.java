@@ -36,6 +36,8 @@ public class DocumentDaoImpl implements DocumentDao{
         sessionObj.beginTransaction();
         sessionObj.saveOrUpdate(document);
         sessionObj.getTransaction().commit();
+        logger.info("Document saved successfully, document details="+document);
+
     }
 
     @Override

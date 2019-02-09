@@ -91,14 +91,12 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public Set<Role> getUserRoles(Long userId) {
-        logger.info("i am in getUserRoles "+userId);
         Session sessionObj = sessionFactory.openSession();
         sessionObj.beginTransaction();
-        //setparatmeter???
         List<Role> roleList = sessionObj.createQuery("select ur from User u inner join u.roles ur where u.userId=:userId").list();
-       logger.info("list result"+roleList);
         Set<Role> roleSet = new HashSet<>();
         roleSet.addAll(roleList);
+
         return roleSet;
     }
 
