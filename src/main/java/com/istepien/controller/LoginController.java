@@ -53,7 +53,7 @@ public class LoginController {
         userService.registerNewUserAccount(user);
         securityServiceImpl.login(user.getUsername(), user.getPassword());
 
-        return "redirect:/success";
+        return "home";
     }
 
 }
