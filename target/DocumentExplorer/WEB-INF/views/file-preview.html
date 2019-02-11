@@ -5,6 +5,12 @@
     <title>showDocumentPreview</title>
 </head>
 <body>
+Authenticated username:
+<div sec:authentication ="principal.username"> </div>
+Authenticated user roles:
+<div sec:authentication ="principal.authorities"> </div>
+<div sec:authorize="hasRole('ROLE_ADMIN')">    here is something visible for admin only </button>
+</div>
 <embed th:src="@{documents/show/${docId}}"/>
 <button type="button"><a th:href="@{/}">home</a> </button>
 <button type="button"><a th:href="@{/documents/list}">List of documents</a> </button>

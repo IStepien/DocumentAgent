@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.security.Principal;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/documents")
@@ -91,6 +92,7 @@ public class DocumentController {
 
         return view;
     }
+
     @GetMapping(value = "/show/{docId}", produces = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<byte[]> getImage(@PathVariable("docId") Long docId) throws IOException {
 
@@ -99,8 +101,9 @@ public class DocumentController {
         headers.setContentType(MediaType.MULTIPART_FORM_DATA);
         return new ResponseEntity<byte[]>(docContent, headers, HttpStatus.OK);
     }
+
     @GetMapping(value = "/download")
-        public void getFile(@RequestParam(name = "docId") Long docId, HttpServletResponse response){
+    public void getFile(@RequestParam(name = "docId") Long docId, HttpServletResponse response) {
         try {
             DefaultResourceLoader loader = new DefaultResourceLoader();
             InputStream is = new ByteArrayInputStream(documentService.getDocument(docId).getFile());
@@ -110,6 +113,17 @@ public class DocumentController {
         } catch (IOException ex) {
             throw new RuntimeException("IOError writing file to output stream");
         }
+
+    }
+
+    @RequestMapping(value = "/findDocumentByTitle")
+    public String findDocumentByTitle(@RequestParam(value = "docTitle") String docTitle, Model model) {
+
+        List<Document> documentList = documentService.getAllDocuments().stream().filter(document -> document.getDocTitle().equals(docTitle)).collect(Collectors.toList());
+
+        model.addAttribute("documentList", documentList);
+
+        return "document-list";
 
     }
 
