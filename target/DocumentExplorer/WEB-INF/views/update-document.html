@@ -10,15 +10,12 @@ Authenticated user roles:
 <div sec:authentication ="principal.authorities"> </div>
 <div sec:authorize="hasRole('ROLE_ADMIN')">    here is something visible for admin only </button>
 </div>
-<form action="#" th:action="@{saveDocument}" th:object="${document}" method="post">
+<form action="#" th:action="@{updateDocument}" th:object="${document}" method="post">
     <input type="hidden" th:field="*{docId}"/>
     <p>docTitlee: <input type="text" th:field="*{docTitle}" /></p>
     <p>docDescription: <input type="text" th:field="*{docDescription}" /></p>
     <p>docComment: <input type="text" th:field="*{docComment}" /></p>
-    <p>date added: <input type="date" th:field="*{docDateAdded}"/></p>
-    <p>date modified: <input type="date" th:field="*{docLastModified}"/></p>
     <p>file: <input type="file" th:field="*{file}" name="file"></p>
-
 
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 </form>

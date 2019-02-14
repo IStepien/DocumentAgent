@@ -16,6 +16,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletResponse;
@@ -23,6 +24,8 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.Principal;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -50,8 +53,11 @@ public class DocumentController {
 
     @PostMapping("/saveDocument")
     public String saveDocument(@ModelAttribute("document") Document document, Principal principal) {
+
+
         User current = userService.getUserByName(principal.getName());
         document.setUser(current);
+        document.setDocDateAdded(LocalDate.now());
         documentService.saveDocument(document);
 
         return "home";
@@ -80,11 +86,21 @@ public class DocumentController {
 
         Document doc = documentService.getDocument(docId);
 
-        model.addAttribute("document", doc);
+                model.addAttribute("document", doc);
 
         return "update-document";
     }
+    @PostMapping("/updateDocument")
+    public String updateDocument(@ModelAttribute("document") Document document, Principal principal) {
 
+        User current = userService.getUserByName(principal.getName());
+        document.setUser(current);
+        document.setDocDateAdded(documentService.getDocument(document.getDocId()).getDocDateAdded());
+        document.setDocLastModified(LocalDate.now());
+        documentService.saveDocument(document);
+
+        return "home";
+    }
     @GetMapping("/showDocumentPreview")
     public ModelAndView showDocumentPreview(@RequestParam(name = "docId") Long docId) {
         ModelAndView view = new ModelAndView("file-preview");
@@ -126,5 +142,17 @@ public class DocumentController {
         return "document-list";
 
     }
+//    @PostMapping("/saveAttachment")
+//    public void saveAttachment(@RequestParam MultipartFile file, Principal principal, HttpServletResponse response) throws IOException {
+//
+//        response.setContentType("application/pdf");
+//        response.setContentLength(file.getBytes().length);
+//        response.setHeader("Content-Disposition", "inline; filename=help.pdf");
+//        response.setHeader("Cache-Control", "cache, must-revalidate");
+//        response.setHeader("Pragma", "public");
+//
+//        response.getOutputStream().write(file.getBytes());
+//
+//    }
 
 }

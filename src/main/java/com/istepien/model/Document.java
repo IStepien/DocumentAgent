@@ -6,6 +6,8 @@ import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -23,10 +25,10 @@ public class Document {
     private String docComment;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "date_added")
-    private Date docDateAdded;
+    private LocalDate docDateAdded;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "last_modified")
-    private Date docLastModified;
+    private LocalDate docLastModified;
     @Column(name = "file")
     @Lob
     private byte[] file;
@@ -71,19 +73,19 @@ public class Document {
         this.docComment = docComment;
     }
 
-    public Date getDocDateAdded() {
+    public LocalDate getDocDateAdded() {
         return docDateAdded;
     }
 
-    public void setDocDateAdded(Date docDateAdded) {
+    public void setDocDateAdded(LocalDate docDateAdded) {
         this.docDateAdded = docDateAdded;
     }
 
-    public Date getDocLastModified() {
+    public LocalDate getDocLastModified() {
         return docLastModified;
     }
 
-    public void setDocLastModified(Date docLastModified) {
+    public void setDocLastModified(LocalDate docLastModified) {
         this.docLastModified = docLastModified;
     }
 

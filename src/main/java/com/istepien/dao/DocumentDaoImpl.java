@@ -9,34 +9,41 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
+
 @Repository
-public class DocumentDaoImpl implements DocumentDao{
+public class DocumentDaoImpl implements DocumentDao {
     private static final Logger logger = LoggerFactory.getLogger(DocumentDaoImpl.class);
 
 
     @Autowired
-   private SessionFactory sessionfactory;
+    private SessionFactory sessionfactory;
+
+    public DocumentDaoImpl() {
+    }
 
     @Override
     public List<Document> getAllDocuments() {
-        Session sessionObj =  sessionfactory.openSession();
+        Session sessionObj = sessionfactory.openSession();
         sessionObj.beginTransaction();
         List<Document> documentList = sessionObj.createQuery("from Document").list();
         sessionObj.getTransaction().commit();
-        for(Document document : documentList){
-            logger.info("Document list:"+document);
+        for (Document document : documentList) {
+            logger.info("Document list:" + document);
         }
         return documentList;
     }
 
     @Override
     public void saveDocument(Document document) {
-        Session sessionObj =  sessionfactory.openSession();
+        Session sessionObj = sessionfactory.openSession();
         sessionObj.beginTransaction();
         sessionObj.saveOrUpdate(document);
         sessionObj.getTransaction().commit();
-        logger.info("Document saved successfully, document details="+document);
+        logger.info("Document saved successfully, document details=" + document);
 
     }
 
@@ -44,9 +51,9 @@ public class DocumentDaoImpl implements DocumentDao{
     public Document getDocument(Long id) {
         Session sessionObj = sessionfactory.openSession();
         sessionObj.beginTransaction();
-        Document document= (Document) sessionObj.load(Document.class, new Long(id));
+        Document document = (Document) sessionObj.load(Document.class, new Long(id));
         sessionObj.getTransaction().commit();
-        logger.info("Document loaded successfully, document details="+document);
+        logger.info("Document loaded successfully, document details=" + document);
         return document;
     }
 
@@ -57,7 +64,7 @@ public class DocumentDaoImpl implements DocumentDao{
         Document doc = sessionObj.load(Document.class, new Long(id));
         sessionObj.delete(doc);
         sessionObj.getTransaction().commit();
-        logger.info("Document deleted successfully, document details="+doc);
+        logger.info("Document deleted successfully, document details=" + doc);
         sessionObj.close();
     }
 
