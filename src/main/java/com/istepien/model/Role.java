@@ -1,5 +1,8 @@
 package com.istepien.model;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -13,6 +16,7 @@ public class Role {
     private String rolename;
     @ManyToMany(mappedBy = "roles")
     private Set<User> users;
+
 
     public Role() {
     }
@@ -40,4 +44,6 @@ public class Role {
     public void setUsers(Set<User> users) {
         this.users = users;
     }
+
+
 }

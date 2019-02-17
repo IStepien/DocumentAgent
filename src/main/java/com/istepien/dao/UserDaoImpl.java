@@ -30,6 +30,7 @@ public class UserDaoImpl implements UserDao {
         for (User user : userList) {
             logger.info("User list: " + user);
         }
+        sessionObj.close();
         return userList;
     }
 
@@ -40,6 +41,7 @@ public class UserDaoImpl implements UserDao {
         sessionObj.save(user);
         sessionObj.getTransaction().commit();
         logger.info("User saved successfully, user details=" + user);
+        sessionObj.close();
 
     }
 
@@ -50,6 +52,8 @@ public class UserDaoImpl implements UserDao {
         User user = sessionObj.load(User.class, new Long(id));
         sessionObj.getTransaction().commit();
         logger.info("User loaded successfully, user details=" + user);
+        sessionObj.close();
+
         return user;
     }
 
@@ -63,6 +67,8 @@ public class UserDaoImpl implements UserDao {
                 .getSingleResult();
         sessionObj.getTransaction().commit();
         logger.info("User found successfully, user details=" + user);
+        sessionObj.close();
+
         return user;
     }
 
@@ -76,6 +82,8 @@ public class UserDaoImpl implements UserDao {
         }
         sessionObj.getTransaction().commit();
         logger.info("User deleted successfully, user details=" + user);
+        sessionObj.close();
+
 
     }
 
@@ -86,6 +94,8 @@ public class UserDaoImpl implements UserDao {
         sessionObj.update(user);
         sessionObj.getTransaction().commit();
         logger.info("User updated successfully, user details=" + user);
+        sessionObj.close();
+
 
     }
 
@@ -96,6 +106,7 @@ public class UserDaoImpl implements UserDao {
         List<Role> roleList = sessionObj.createQuery("select ur from User u inner join u.roles ur where u.userId=:userId").list();
         Set<Role> roleSet = new HashSet<>();
         roleSet.addAll(roleList);
+        sessionObj.close();
 
         return roleSet;
     }

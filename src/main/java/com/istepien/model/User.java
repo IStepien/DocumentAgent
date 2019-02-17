@@ -1,4 +1,5 @@
 package com.istepien.model;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -27,18 +28,10 @@ public class User {
     private String password;
     @OneToMany(mappedBy = "user")
     private Set<Document> documentSet;
+    @OneToMany(mappedBy = "user")
+    private Set<Message> messageSet;
 
-
-    public User(String username, String firstName, String lastName, String email, Set<Role> roles, String password) {
-        this.username = username;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.roles = roles;
-        this.password = password;
-    }
-
-    public User() {
+      public User() {
     }
 
     public Long getUserId() {
@@ -81,7 +74,7 @@ public class User {
         this.email = email;
     }
 
-        public Set<Document> getDocumentSet() {
+    public Set<Document> getDocumentSet() {
         return documentSet;
     }
 
@@ -105,13 +98,25 @@ public class User {
         this.password = password;
     }
 
+    public Set<Message> getMessageSet() {
+        return messageSet;
+    }
+
+    public void setMessageSet(Set<Message> messageSet) {
+        this.messageSet = messageSet;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "userId=" + userId +
+                ", username='" + username + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
-                             '}';
+                ", roles=" + roles +
+                ", password='" + password + '\'' +
+                ", documentSet=" + documentSet +
+                '}';
     }
 }

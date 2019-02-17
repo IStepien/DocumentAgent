@@ -9,13 +9,13 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "Document")
 public class Document {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long docId;
     @Column(name = "title")
     private String docTitle;
@@ -37,6 +37,12 @@ public class Document {
     @JoinColumn(name = "user_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "message_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Message message;
+
 
     public Document() {
     }
@@ -97,7 +103,7 @@ public class Document {
         this.file = file;
     }
 
-        public User getUser() {
+    public User getUser() {
         return user;
     }
 

@@ -1,18 +1,18 @@
 package com.istepien.controller;
 
 
+import com.istepien.model.Role;
 import com.istepien.model.User;
+import com.istepien.service.RoleService;
 import com.istepien.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -24,6 +24,7 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
 
     @GetMapping("/list")
     public String listUsers(Model model) {
@@ -46,11 +47,10 @@ public class UserController {
     }
 
     @PostMapping("/saveUser")
-    public String saveUser(@ModelAttribute("user") User user){
+    public String saveUser(@ModelAttribute("user") User user) {
         userService.saveUser(user);
         return "user-list";
     }
-
 
 
 //    public User getUser(Long id);

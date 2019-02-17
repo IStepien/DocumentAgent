@@ -15,10 +15,10 @@ Authenticated user roles:
 </div>
 
 <form action="#" th:action="@{saveDocument}" th:object="${document}" method="post">
-    <p>docTitlee: <input type="text" th:field="*{docTitle}" /></p>
-    <p>docDescription: <input type="text" th:field="*{docDescription}" /></p>
-    <p>docComment: <input type="text" th:field="*{docComment}" /></p>
-    <p>file: <input type="file" th:field="*{file}" name="file"></p>
+    <p>Title: <input type="text" th:field="*{docTitle}" /></p>
+    <p>Description: <input type="text" th:field="*{docDescription}" /></p>
+    <p>Comment: <input type="text" th:field="*{docComment}" /></p>
+    <p>File: <input type="file" th:field="*{file}" name="file"></p>
 
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
     <button type="button"><a th:href="@{/}">home</a> </button>

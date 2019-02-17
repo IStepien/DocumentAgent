@@ -82,7 +82,7 @@ public class DataSourceConfig {
         stmt.executeUpdate("INSERT INTO ROLES (ROLEID, ROLENAME) VALUES (3, 'ROLE_ADMIN');\n" +
                 "INSERT INTO ROLES (ROLEID, ROLENAME) VALUES (2, 'ROLE_MODERATOR');\n" +
                 "INSERT INTO ROLES (ROLEID, ROLENAME) VALUES (1, 'ROLE_USER');" +
-                "INSERT  INTO USERS ( USERID, USERNAME, EMAIL, FIRSTNAME, LASTNAME, PASSWORD) VALUES (1, 'asd', 'asd', 'asd', 'asd',  '$2a$10$a6JP9sfC8YPwOd4aY1Xdse7kj0gNVvAIR7hcf.gPtPFOqQLSkNyfG');" +
+                "INSERT  INTO USERS ( USERID, USERNAME, EMAIL, FIRSTNAME, LASTNAME, PASSWORD) VALUES (1, 'admin', 'admin', 'admin', 'admin',  '$2a$04$JdGOGTFh0wgdNXEVtMNKK.QIR0EZUkSPaEOo4reGcIh92h/CMY6Zu');" +
                 "INSERT INTO USER_ROLE  (USERID, ROLEID) VALUES (1, 1);" +
                 "INSERT INTO USER_ROLE  (USERID, ROLEID) VALUES (1, 2);" +
                 "INSERT INTO USER_ROLE  (USERID, ROLEID) VALUES (1, 3);" );

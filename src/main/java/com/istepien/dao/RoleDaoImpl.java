@@ -32,6 +32,8 @@ public class RoleDaoImpl implements RoleDao {
         for (Role role : roles) {
             logger.info("Role list: " + role);
         }
+        sessionObj.close();
+
         return roles;
     }
 
@@ -46,6 +48,7 @@ public class RoleDaoImpl implements RoleDao {
 
         sessionObj.getTransaction().commit();
         logger.info("Role loaded successfully, role details=" + theRole.getRolename() + theRole.getRoleId() + theRole.getUsers());
+        sessionObj.close();
 
         return theRole;
     }

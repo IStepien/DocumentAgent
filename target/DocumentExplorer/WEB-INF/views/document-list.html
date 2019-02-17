@@ -16,11 +16,12 @@
 <p>List of documents</p>
 <table>
     <tr>
-        <th>DocId:</th>
-        <th>title:</th>
-        <th>comment:</th>
-        <th>date added:</th>
-        <th>date modified:</th>
+        <th>Id:</th>
+        <th>Title:</th>
+        <th>Comment:</th>
+        <th>Description:</th>
+        <th>Date added:</th>
+        <th>Date modified:</th>
         <th></th>
         <th></th>
         <th></th>
@@ -34,6 +35,7 @@
         <td th:text="${document.docId}" />
         <td th:text="${document.docTitle}" />
         <td th:text="${document.docComment}" />
+        <td th:text="${document.docDescription}" />
         <td th:text="${document.docDateAdded}" />
         <td th:text="${document.docLastModified}" />
         <td><a th:href="@{/documents/deleteDocument(docId=${document.docId})}">delete</a></td>
