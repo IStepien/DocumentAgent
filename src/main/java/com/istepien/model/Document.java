@@ -8,6 +8,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Set;
 
@@ -38,8 +39,8 @@ public class Document {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "message_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @JoinColumn(name = "message_id", nullable = true)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Message message;
 
@@ -120,7 +121,7 @@ public class Document {
                 ", docComment='" + docComment + '\'' +
                 ", docDateAdded=" + docDateAdded +
                 ", docLastModified=" + docLastModified +
-                ", file='" + file + '\'' +
+                ", file=" + Arrays.toString(file) +
                 ", user=" + user +
                 '}';
     }

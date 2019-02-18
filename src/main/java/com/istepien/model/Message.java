@@ -61,4 +61,12 @@ public class Message {
         this.documentSet = documentSet;
     }
 
+    @Override
+    public String toString() {
+        return "Message{" +
+                "messageId=" + messageId +
+                ", messageText='" + messageText + '\'' +
+                ", user=" + user +
+                '}';
+    }
 }

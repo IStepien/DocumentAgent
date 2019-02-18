@@ -48,7 +48,7 @@ public class MessageController {
         for (Message m : messageList) {
             toBeUpgraded.add(m.getUser().getUsername());
         }
-        
+
 
         model.addAttribute("toBeUpgraded", toBeUpgraded);
 

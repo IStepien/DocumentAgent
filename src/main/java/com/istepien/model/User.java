@@ -116,7 +116,6 @@ public class User {
                 ", email='" + email + '\'' +
                 ", roles=" + roles +
                 ", password='" + password + '\'' +
-                ", documentSet=" + documentSet +
                 '}';
     }
 }

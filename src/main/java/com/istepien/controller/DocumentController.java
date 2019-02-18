@@ -64,12 +64,14 @@ public class DocumentController {
     }
 
     @GetMapping("/list")
-    public String listDocuments(Model model) {
+    public String listDocuments(Model model, Principal principal) {
+        System.out.println("list");
+        List<Document> documents = documentService.getAllDocuments();
+        System.out.println("size"+ documents.size());
+       List<Document> documentList = documents.stream().filter(doc->doc.getUser().getUsername().equals(principal.getName())).collect(Collectors.toList());
 
-        List<Document> documentList = documentService.getAllDocuments();
-
-        model.addAttribute(documentList);
-
+        model.addAttribute("documentList", documentList);
+        System.out.println("atribute added");
         return "document-list";
     }
 
