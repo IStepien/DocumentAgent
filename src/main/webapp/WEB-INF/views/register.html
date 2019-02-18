@@ -7,11 +7,11 @@
 </head>
 <body>
 <form action="#" th:action="@{/registration}" th:object="${user}" method="post">
-    <p>First name: <input type="text" th:field="*{firstName}" /></p>
+    <p>First name: <input type="text" th:field="*{firstName}" th:required="required"/></p>
     <p>Last name: <input type="text" th:field="*{lastName}" /></p>
     <p>Email: <input type="text" th:field="*{email}" />
-    <p>username: <input type="text" th:field="*{username}" /></p>
-    <p>password <input type="password" th:field="*{password}" /></p>
+    <p>username: <input type="text" th:field="*{username}" th:required="required"/></p>
+    <p>password <input type="password" th:field="*{password}" th:required="required" /></p>
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 </form>
 </body>

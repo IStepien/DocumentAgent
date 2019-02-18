@@ -1,5 +1,7 @@
 package com.istepien.model;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -12,6 +14,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
     @Column
+    @NotNull
     private String username;
     @Column
     private String firstName;
@@ -25,6 +28,7 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "roleId"))
     private Set<Role> roles;
     @Column
+    @NotNull
     private String password;
     @OneToMany(mappedBy = "user")
     private Set<Document> documentSet;

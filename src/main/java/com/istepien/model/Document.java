@@ -1,6 +1,7 @@
 package com.istepien.model;
 
 import com.sun.deploy.security.ValidationState;
+import com.sun.istack.NotNull;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -19,6 +20,7 @@ public class Document {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long docId;
     @Column(name = "title")
+    @NotNull
     private String docTitle;
     @Column(name = "description")
     private String docDescription;
