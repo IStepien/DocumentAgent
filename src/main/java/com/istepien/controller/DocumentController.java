@@ -65,13 +65,10 @@ public class DocumentController {
 
     @GetMapping("/list")
     public String listDocuments(Model model, Principal principal) {
-        System.out.println("list");
         List<Document> documents = documentService.getAllDocuments();
-        System.out.println("size"+ documents.size());
-       List<Document> documentList = documents.stream().filter(doc->doc.getUser().getUsername().equals(principal.getName())).collect(Collectors.toList());
+        List<Document> documentList = documents.stream().filter(doc -> doc.getUser().getUsername().equals(principal.getName())).collect(Collectors.toList());
 
         model.addAttribute("documentList", documentList);
-        System.out.println("atribute added");
         return "document-list";
     }
 
@@ -88,10 +85,11 @@ public class DocumentController {
 
         Document doc = documentService.getDocument(docId);
 
-                model.addAttribute("document", doc);
+        model.addAttribute("document", doc);
 
         return "update-document";
     }
+
     @PostMapping("/updateDocument")
     public String updateDocument(@ModelAttribute("document") Document document, Principal principal) {
 
@@ -111,14 +109,14 @@ public class DocumentController {
         return view;
     }
 
-    @GetMapping(value = "/show/{docId}", produces = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<byte[]> getImage(@PathVariable("docId") Long docId) throws IOException {
-
-        byte[] docContent = documentService.getDocument(docId).getFile();
-        final HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.MULTIPART_FORM_DATA);
-        return new ResponseEntity<byte[]>(docContent, headers, HttpStatus.OK);
-    }
+//    @GetMapping(value = "/showDocumentPreview", produces = MediaType.MULTIPART_FORM_DATA_VALUE)
+//    public ResponseEntity<byte[]> getImage(@RequestParam(name = "docId") Long docId) throws IOException {
+//
+//        byte[] docContent = documentService.getDocument(docId).getFile();
+//        final HttpHeaders headers = new HttpHeaders();
+//        headers.setContentType(MediaType.MULTIPART_FORM_DATA);
+//        return new ResponseEntity<byte[]>(docContent, headers, HttpStatus.OK);
+//    }
 
     @GetMapping(value = "/download")
     public void getFile(@RequestParam(name = "docId") Long docId, HttpServletResponse response) {
@@ -144,17 +142,27 @@ public class DocumentController {
         return "document-list";
 
     }
-//    @PostMapping("/saveAttachment")
-//    public void saveAttachment(@RequestParam MultipartFile file, Principal principal, HttpServletResponse response) throws IOException {
-//
-//        response.setContentType("application/pdf");
-//        response.setContentLength(file.getBytes().length);
-//        response.setHeader("Content-Disposition", "inline; filename=help.pdf");
-//        response.setHeader("Cache-Control", "cache, must-revalidate");
-//        response.setHeader("Pragma", "public");
-//
-//        response.getOutputStream().write(file.getBytes());
-//
-//    }
+
+    @PostMapping("/saveAttachment")
+    public void saveAttachment(@RequestParam MultipartFile file, Principal principal, HttpServletResponse response) throws IOException {
+
+        response.setContentType("application/pdf");
+        response.setContentLength(file.getBytes().length);
+        response.setHeader("Content-Disposition", "inline; filename=help.pdf");
+        response.setHeader("Cache-Control", "cache, must-revalidate");
+        response.setHeader("Pragma", "public");
+
+        response.getOutputStream().write(file.getBytes());
+        logger.info("attachment saved");
+
+
+    }
+
+    @RequestMapping("/sortBy")
+    public String sortBy(@RequestParam(name = "value") String value, Model model){
+        
+
+        return "document-list";
+    }
 
 }

@@ -7,55 +7,62 @@
 <body>
 <div>
     <form th:action="@{/documents/findDocumentByTitle}" method="post">
-        <p> Search:  <input name="docTitle" type="text"></p>
+        <p> Search: <input name="docTitle" type="text"></p>
         <input type="submit" value="submit">
     </form>
 </div>
 
 <div>
-<p>List of documents</p>
-<table>
-    <tr>
-        <th>Id:</th>
-        <th>Title:</th>
-        <th>Comment:</th>
-        <th>Description:</th>
-        <th>Date added:</th>
-        <th>Date modified:</th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-    </tr>
-    <td th:if="${#lists.isEmpty(documentList)}">
-       No documents available
-    </td>
-    <tr th:each="document : ${documentList}">
+    <p>List of documents</p>
+    <form th:action="@{/documents/sortBy}" method="post">
 
-        <td th:text="${document.docId}" />
-        <td th:text="${document.docTitle}" />
-        <td th:text="${document.docComment}" />
-        <td th:text="${document.docDescription}" />
-        <td th:text="${document.docDateAdded}" />
-        <td th:text="${document.docLastModified}" />
-        <td><a th:href="@{/documents/deleteDocument(docId=${document.docId})}">delete</a></td>
-        <td><a th:href="@{/documents/formForUpdateDocument(docId=${document.docId})}">modify</a></td>
-        <td><a th:href="@{/documents/showDocumentPreview(docId=${document.docId})}">preview doc</a>
-        <td><a th:href="@{/documents/download(docId=${document.docId})}"> download</a></td>
+        docId  <input type="radio" name="value" value="docId">
+        docTitle <input type="radio" name="value" value="docTitle"/>
+        docDateAdded <input type="radio" name="value" value="docDateAdded"/>
+        docLastModified <input type="radio" name="value" value="docLastModified"/>
+        <input type="submit" value="sort">
+    </form>
 
 
-    </tr>
-</table>
-<button type="button"><a th:href="@{/documents/formForAddDocument}">Add document</a> </button>
-<button type="button"><a th:href="@{/}">home</a> </button>
-    <button type="button"><a th:href="@{/documents/list}">List of all documents</a> </button>
+    <table>
+        <tr>
+            <th>Id:</th>
+            <th>Title:</th>
+            <th>Description:</th>
+            <th>Date added:</th>
+            <th>Date modified:</th>
+            <th>Comment:</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <td th:if="${#lists.isEmpty(documentList)}">
+            No documents available
+        </td>
+        <tr th:each="document : ${documentList}">
+
+            <td th:text="${document.docId}"/>
+            <td th:text="${document.docTitle}"/>
+            <td th:text="${document.docDescription}"/>
+            <td th:text="${document.docDateAdded}"/>
+            <td th:text="${document.docLastModified}"/>
+            <td th:text="${document.docComment}"/>
+            <td><a th:href="@{/documents/deleteDocument(docId=${document.docId})}">delete</a></td>
+            <td><a th:href="@{/documents/formForUpdateDocument(docId=${document.docId})}">modify</a></td>
+            <td><a th:href="@{/documents/showDocumentPreview(docId=${document.docId})}">preview doc</a>
+            <td><a th:href="@{/documents/download(docId=${document.docId})}"> download</a></td>
+
+
+        </tr>
+    </table>
+    <button type="button"><a th:href="@{/documents/formForAddDocument}">Add document</a></button>
+    <button type="button"><a th:href="@{/}">home</a></button>
+    <button type="button"><a th:href="@{/documents/list}">List of all documents</a></button>
 
 </div>
 
 
-
-
-
-
 </body>
+
 </html>
