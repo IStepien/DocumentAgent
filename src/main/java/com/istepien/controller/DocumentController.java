@@ -136,9 +136,11 @@ public class DocumentController {
     }
 
     @RequestMapping(value = "/findDocumentByTitle")
-    public String findDocumentByTitle(@RequestParam(value = "docTitle") String docTitle, Model model) {
-
-        List<Document> documentList = documentService.getAllDocuments().stream().filter(document -> document.getDocTitle().equals(docTitle)).collect(Collectors.toList());
+    public String findDocumentByTitle(@RequestParam(value = "docTitle") String docTitle, Model model, Principal principal) {
+        List<Document> documentList = documentService.getAllDocuments().stream()
+                                    .filter(document -> document.getDocTitle().equals(docTitle))
+                                    .filter(document -> document.getUser().getUsername().equals(principal.getName()))
+                                    .collect(Collectors.toList());
 
         model.addAttribute("documentList", documentList);
 
