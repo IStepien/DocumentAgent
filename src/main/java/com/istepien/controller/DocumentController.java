@@ -164,9 +164,12 @@ public class DocumentController {
     }
 
     @RequestMapping("/sortBy")
-    public String sortBy(@RequestParam(name = "value") String value, Model model){
-        List<Document> documentList = documentService.getAllDocuments();
-        System.out.println(value);
+    public String sortBy(@RequestParam(name = "value") String value, Model model, Principal principal){
+        List<Document> documentList = documentService.getAllDocuments().stream()
+                                                     .filter(document -> document.getUser().getUsername().equals(principal.getName()))
+                                                     .collect(Collectors.toList());
+
+
         switch (value){
             case "docId":
               break;
