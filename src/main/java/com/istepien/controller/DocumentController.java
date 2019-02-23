@@ -26,6 +26,9 @@ import java.io.InputStream;
 import java.security.Principal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -160,7 +163,29 @@ public class DocumentController {
 
     @RequestMapping("/sortBy")
     public String sortBy(@RequestParam(name = "value") String value, Model model){
-        
+        List<Document> documentList = documentService.getAllDocuments();
+        System.out.println(value);
+        switch (value){
+            case "docId":
+              break;
+
+            case "docTitle":
+                Collections.sort(documentList, new Comparator<Document>() {
+                    @Override
+                    public int compare(Document o1, Document o2) {
+                        return o1.getDocTitle().compareToIgnoreCase(o2.getDocTitle());
+                    }
+                });
+            case "docDateAdded":
+                Collections.sort(documentList, new Comparator<Document>() {
+                    @Override
+                    public int compare(Document o1, Document o2) {
+                        return o1.getDocDateAdded().compareTo(o2.getDocDateAdded());
+                    }
+                });
+        }
+
+        model.addAttribute(documentList);
 
         return "document-list";
     }
