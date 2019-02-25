@@ -3,16 +3,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="resources/style.css" type="text/css"/>
+    <script>
+        $('.message a').click(function(){
+            $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+        });
+    </script>
     <title>Create user</title>
 </head>
 <body>
-<form action="#" th:action="@{/registration}" th:object="${user}" method="post">
-    <p>First name: <input type="text" th:field="*{firstName}" th:required="required"/></p>
-    <p>Last name: <input type="text" th:field="*{lastName}" /></p>
-    <p>Email: <input type="text" th:field="*{email}" />
-    <p>username: <input type="text" th:field="*{username}" th:required="required"/></p>
-    <p>password <input type="password" th:field="*{password}" th:required="required" /></p>
-    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+<form action="#" th:action="@{/registration}" th:object="${user}" method="post" class="register-form">
+    <input type="text" th:field="*{firstName}" th:required="required" placeholder="first name"/>
+    <input type="text" th:field="*{lastName}" placeholder="last name"/>
+    <input type="text" th:field="*{email}"  placeholder="email"/>
+    <input type="text" th:field="*{username}" th:required="required" placeholder="username"/>
+    <input type="password" th:field="*{password}" th:required="required" placeholder="password"/>
+
+    <input type="submit" value="Submit" /> <input type="reset" value="Reset" />
+    <p class="message">Already registered? <a th:href="@{/showLoginPage}">Sign In</a></p>
 </form>
 </body>
 </html>
