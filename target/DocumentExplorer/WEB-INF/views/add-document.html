@@ -3,21 +3,24 @@
 <html xmlns:th="http://www.thymeleaf.org"       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
+    <link rel="stylesheet" href="../resources/style.css" type="text/css"/>
     <meta charset="UTF-8">
     <title>Adding document</title>
 </head>
 <body>
+<div>
+
 Authenticated username:
 <div sec:authentication ="principal.username"> </div>
 Authenticated user roles:
 <div sec:authentication ="principal.authorities"> </div>
-<div sec:authorize="hasRole('ROLE_ADMIN')"> here is something visible for admin only </button>
-</div>
+<div sec:authorize="hasRole('ROLE_ADMIN')"> here is something visible for admin only</div>
 
+<div class="form">
 <form action="#" th:action="@{saveDocument}" th:object="${document}" method="post">
-    <p>Title: <input type="text" th:field="*{docTitle}" th:required="required"/></p>
-    <p>Description: <input type="text" th:field="*{docDescription}" /></p>
-    <p>Comment: <input type="text" th:field="*{docComment}" /></p>
+    <input type="text" th:field="*{docTitle}" th:required="required" placeholder="Title"/></p>
+    <input type="text" th:field="*{docDescription}" placeholder="Description" /></p>
+    <input type="text" th:field="*{docComment}" placeholder="Comment" /></p>
 
     <p>File: <input type="file" th:field="*{file}" name="file" th:required="required"></p>
 
@@ -26,5 +29,7 @@ Authenticated user roles:
     <button type="button"><a th:href="@{/}">home</a> </button>
 
 </form>
+</div>
+</div>
 </body>
 </html>

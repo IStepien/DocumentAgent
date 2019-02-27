@@ -16,9 +16,10 @@ public class Role {
     private String rolename;
     @ManyToMany(mappedBy = "roles")
     private Set<User> users;
+public Role(){}
 
-
-    public Role() {
+    public Role(String rolename) {
+        this.rolename = rolename;
     }
 
     public int getRoleId() {

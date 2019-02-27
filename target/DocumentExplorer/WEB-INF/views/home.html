@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org"       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
+    <link rel="stylesheet" href="../resources/style.css" type="text/css"/>
     <meta charset="UTF-8">
     <title>Start</title>
 </head>
@@ -10,9 +11,11 @@ Authenticated username:
 <div sec:authentication ="principal.username"> </div>
 Authenticated user roles:
 <div sec:authentication ="principal.authorities"> </div>
+<div class="form">
 <form th:action="@{/logout}" method="post">
     <input type="submit" value="logout">
 </form>
+</div>
 <div sec:authorize="hasRole('ROLE_ADMIN')">    here is something visible for admin only </div>
 <div>
     <button type="button"><a th:href="@{/documents/formForAddDocument}">Add document</a> </button>

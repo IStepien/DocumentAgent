@@ -1,6 +1,7 @@
 package com.istepien.controller;
 
 import com.istepien.model.Document;
+import com.istepien.model.Role;
 import com.istepien.model.User;
 import com.istepien.service.DocumentService;
 import com.istepien.service.UserService;
@@ -26,10 +27,7 @@ import java.io.InputStream;
 import java.security.Principal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Controller
@@ -69,9 +67,15 @@ public class DocumentController {
     @GetMapping("/list")
     public String listDocuments(Model model, Principal principal) {
         List<Document> documents = documentService.getAllDocuments();
-        List<Document> documentList = documents.stream().filter(doc -> doc.getUser().getUsername().equals(principal.getName())).collect(Collectors.toList());
 
-        model.addAttribute("documentList", documentList);
+        User current = userService.getUserByName(principal.getName());
+
+        Set<Role> userRoles = current.getRoles();
+
+        if (userRoles.size() == 1) {
+            documents = documents.stream().filter(doc -> doc.getUser().getUsername().equals(principal.getName())).collect(Collectors.toList());
+        }
+        model.addAttribute("documentList", documents);
         return "document-list";
     }
 
@@ -104,6 +108,7 @@ public class DocumentController {
 
         return "home";
     }
+
     @GetMapping("/showDocumentPreview")
     public ModelAndView showDocumentPreview(@RequestParam(name = "docId") Long docId) {
         ModelAndView view = new ModelAndView("file-preview");
@@ -137,10 +142,21 @@ public class DocumentController {
 
     @RequestMapping(value = "/findDocumentByTitle")
     public String findDocumentByTitle(@RequestParam(value = "docTitle") String docTitle, Model model, Principal principal) {
-        List<Document> documentList = documentService.getAllDocuments().stream()
-                                    .filter(document -> document.getDocTitle().equals(docTitle))
-                                    .filter(document -> document.getUser().getUsername().equals(principal.getName()))
-                                    .collect(Collectors.toList());
+        User current = userService.getUserByName(principal.getName());
+        List<Document> documentList = documentService.getAllDocuments();
+
+        Set<Role> userRoles = current.getRoles();
+
+        if (userRoles.size() == 1) {
+            documentList = documentList.stream()
+                    .filter(document -> document.getDocTitle().equals(docTitle))
+                    .filter(document -> document.getUser().getUsername().equals(principal.getName()))
+                    .collect(Collectors.toList());
+        } else {
+            documentList = documentList.stream()
+                    .filter(document -> document.getDocTitle().equals(docTitle))
+                    .collect(Collectors.toList());
+        }
 
         model.addAttribute("documentList", documentList);
 
@@ -164,15 +180,21 @@ public class DocumentController {
     }
 
     @RequestMapping("/sortBy")
-    public String sortBy(@RequestParam(name = "value") String value, Model model, Principal principal){
-        List<Document> documentList = documentService.getAllDocuments().stream()
-                                                     .filter(document -> document.getUser().getUsername().equals(principal.getName()))
-                                                     .collect(Collectors.toList());
+    public String sortBy(@RequestParam(name = "value") String value, Model model, Principal principal) {
+        List<Document> documentList = documentService.getAllDocuments();
+        User current = userService.getUserByName(principal.getName());
+        Set<Role> userRoles = current.getRoles();
+
+        if (userRoles.size() == 1) {
+            documentList = documentList.stream()
+                    .filter(document -> document.getUser().getUsername().equals(principal.getName()))
+                    .collect(Collectors.toList());
+        }
 
 
-        switch (value){
+        switch (value) {
             case "docId":
-              break;
+                break;
 
             case "docTitle":
                 Collections.sort(documentList, new Comparator<Document>() {
