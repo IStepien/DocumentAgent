@@ -19,8 +19,8 @@ Authenticated user roles:
 <div>
     <button type="button"><a th:href="@{/documents/formForAddDocument}">Add document</a></button>
     <button type="button"><a th:href="@{/documents/list}">List of  my documents</a></button>
-    <div sec:authorize="hasRole('ROLE_MODERATOR')">
-        <button type="button"> <a href="@{/documents/allDocuments}">List of all documents</a> </button>
+    <div sec:authorize="hasAnyRole('ROLE_MODERATOR, ROLE_ADMIN')">
+        <button type="button"> <a th:href="@{/documents/allDocuments}">List of all documents</a> </button>
     </div>
     <div sec:authorize="hasRole('ROLE_USER')">
         <button type="button"><a th:href="@{/messages/requestForUpgrade(username=${#authentication.name})}">Request for

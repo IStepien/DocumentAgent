@@ -81,7 +81,7 @@ public class DocumentController {
 
         model.addAttribute("allDocuments", allDocuments );
 
-        return "document-list";
+        return "allDocuments-list";
     }
 
     @GetMapping("/deleteDocument")

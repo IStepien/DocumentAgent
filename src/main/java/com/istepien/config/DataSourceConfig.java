@@ -85,7 +85,7 @@ public class DataSourceConfig {
                 "INSERT  INTO USERS ( USERID, USERNAME, EMAIL, FIRSTNAME, LASTNAME, PASSWORD) VALUES (1, 'admin', 'admin', 'admin', 'admin',  '$2a$04$JdGOGTFh0wgdNXEVtMNKK.QIR0EZUkSPaEOo4reGcIh92h/CMY6Zu');" +
                 "INSERT INTO USER_ROLE  (USERID, ROLEID) VALUES (1, 3);"+
 
-                "INSERT  INTO USERS ( USERID, USERNAME, EMAIL, FIRSTNAME, LASTNAME, PASSWORD) VALUES (2, 'user1', 'user1', 'user1', 'user1',  '$2y$12$wgp1m.1LMXJnxNtvIUZfvOpjkmLzQROgr9cbT.MYsYIApLWM2jtP2');" +
+                "INSERT  INTO USERS ( USERID, USERNAME, EMAIL, FIRSTNAME, LASTNAME, PASSWORD) VALUES (2, 'user1', 'user1', 'user1', 'user1',  '$2a$10$aVyJ7M1bVguaFg8TuKHMUebVsahCNOdFJEvnhuHx8ENALVxzWEsXC');" +
                 "INSERT INTO USER_ROLE  (USERID, ROLEID) VALUES (2, 1);" );
         return () -> {
         };

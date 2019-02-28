@@ -1,10 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
+    <link rel="stylesheet" href="../resources/style.css">
     <meta charset="UTF-8">
     <title>All Documents</title>
 </head>
 <body>
+<div class="form">
+    <form th:action="@{/documents/findDocumentByTitle}" method="post">
+        <p> Search: <input name="docTitle" type="text"></p>
+        <input type="submit" value="submit">
+    </form>
+</div>
+
+<div class="form">
+    <p>List of my documents</p>
+    <form th:action="@{/documents/sortBy}" method="post">
+
+        docId <input type="radio" name="value" value="docId">
+        docTitle <input type="radio" name="value" value="docTitle"/>
+        docDateAdded <input type="radio" name="value" value="docDateAdded"/>
+        docLastModified <input type="radio" name="value" value="docLastModified"/>
+        <input type="submit" value="sort">
+    </form>
+</div>
+<div class="table">
+    <table>
+        <tr>
+            <th>Id:</th>
+            <th>Title:</th>
+            <th>Description:</th>
+            <th>Date added:</th>
+            <th>Date modified:</th>
+            <th>Comment:</th>
+            <th>Added by:</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <td th:if="${#lists.isEmpty(allDocuments)}">
+            No documents available
+        </td>
+        <tr th:each="document : ${allDocuments}">
+
+            <td th:text="${document.docId}"/>
+            <td th:text="${document.docTitle}"/>
+            <td th:text="${document.docDescription}"/>
+            <td th:text="${document.docDateAdded}"/>
+            <td th:text="${document.docLastModified}"/>
+            <td th:text="${document.docComment}"/>
+            <td th:text="${document.user.username}"/>
+            <td><a th:href="@{/documents/formForUpdateDocument(docId=${document.docId})}">modify</a></td>
+            <td><a th:href="@{/documents/showDocumentPreview(docId=${document.docId})}">preview doc</a>
+            <td><a th:href="@{/documents/download(docId=${document.docId})}"> download</a></td>
+            <div sec:authorize="hasRole('ROLE_ADMIN')">
+                <td><a th:href="@{/documents/deleteDocument(docId=${document.docId})}">delete</a></td>
+            </div>
+
+
+        </tr>
+    </table>
+</div>
+<button type="button"><a th:href="@{/documents/formForAddDocument}">Add document</a></button>
+<button type="button"><a th:href="@{/}">home</a></button>
+<button type="button"><a th:href="@{/documents/list}">List of all documents</a></button>
+
+</div>
+
 
 </body>
 </html>
