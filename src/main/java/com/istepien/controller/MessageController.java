@@ -62,7 +62,7 @@ public class MessageController {
 
         User current = userService.getUserByName(username);
         Role moderator = roleService.getRoleByName("ROLE_MODERATOR");
-        current.getRoles().add(moderator);
+        current.setRole(moderator);
         userService.updateUser(current);
         return "home";
     }

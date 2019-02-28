@@ -65,17 +65,22 @@ public class DocumentController {
     }
 
     @GetMapping("/list")
-    public String listDocuments(Model model, Principal principal) {
+    public String listMyDocuments(Model model, Principal principal) {
         List<Document> documents = documentService.getAllDocuments();
 
         User current = userService.getUserByName(principal.getName());
 
-        Set<Role> userRoles = current.getRoles();
+         documents = documents.stream().filter(doc -> doc.getUser().getUsername().equals(principal.getName())).collect(Collectors.toList());
 
-        if (userRoles.size() == 1) {
-            documents = documents.stream().filter(doc -> doc.getUser().getUsername().equals(principal.getName())).collect(Collectors.toList());
-        }
         model.addAttribute("documentList", documents);
+        return "document-list";
+    }
+    @GetMapping("/allDocuments")
+    public String listAllDocuments(Model model) {
+        List<Document> allDocuments = documentService.getAllDocuments();
+
+        model.addAttribute("allDocuments", allDocuments );
+
         return "document-list";
     }
 
@@ -145,9 +150,9 @@ public class DocumentController {
         User current = userService.getUserByName(principal.getName());
         List<Document> documentList = documentService.getAllDocuments();
 
-        Set<Role> userRoles = current.getRoles();
+        Role userRole = current.getRole();
 
-        if (userRoles.size() == 1) {
+        if (userRole.getRolename().equals("ROLE_USER")) {
             documentList = documentList.stream()
                     .filter(document -> document.getDocTitle().equals(docTitle))
                     .filter(document -> document.getUser().getUsername().equals(principal.getName()))
@@ -183,9 +188,9 @@ public class DocumentController {
     public String sortBy(@RequestParam(name = "value") String value, Model model, Principal principal) {
         List<Document> documentList = documentService.getAllDocuments();
         User current = userService.getUserByName(principal.getName());
-        Set<Role> userRoles = current.getRoles();
+        Role userRole = current.getRole();
 
-        if (userRoles.size() == 1) {
+        if (userRole.getRolename().equals("ROLE_USER")) {
             documentList = documentList.stream()
                     .filter(document -> document.getUser().getUsername().equals(principal.getName()))
                     .collect(Collectors.toList());

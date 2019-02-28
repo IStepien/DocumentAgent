@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <link rel="stylesheet" href="../resources/style.css" type="text/css"/>
     <meta charset="UTF-8">
@@ -14,7 +14,7 @@
 </div>
 
 <div class="form">
-    <p>List of documents</p>
+    <p>List of my documents</p>
     <form th:action="@{/documents/sortBy}" method="post">
 
         docId  <input type="radio" name="value" value="docId">
@@ -49,10 +49,11 @@
             <td th:text="${document.docDateAdded}"/>
             <td th:text="${document.docLastModified}"/>
             <td th:text="${document.docComment}"/>
-            <td><a th:href="@{/documents/deleteDocument(docId=${document.docId})}">delete</a></td>
             <td><a th:href="@{/documents/formForUpdateDocument(docId=${document.docId})}">modify</a></td>
             <td><a th:href="@{/documents/showDocumentPreview(docId=${document.docId})}">preview doc</a>
             <td><a th:href="@{/documents/download(docId=${document.docId})}"> download</a></td>
+    <td><a th:href="@{/documents/deleteDocument(docId=${document.docId})}">delete</a></td>
+
 
 
         </tr>

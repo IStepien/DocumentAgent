@@ -22,11 +22,11 @@ public class User {
     private String lastName;
     @Column
     private String email;
-    @ManyToMany
+    @ManyToOne
     @JoinTable(name = "user_role",
             joinColumns = @JoinColumn(name = "userId"),
             inverseJoinColumns = @JoinColumn(name = "roleId"))
-    private Set<Role> roles;
+    private Role role;
     @Column
     @NotNull
     private String password;
@@ -86,12 +86,12 @@ public class User {
         this.documentSet = documentSet;
     }
 
-    public Set<Role> getRoles() {
-        return roles;
+    public Role getRole() {
+        return role;
     }
 
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     public String getPassword() {
@@ -118,7 +118,6 @@ public class User {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
-                ", roles=" + roles +
                 ", password='" + password + '\'' +
                 '}';
     }
