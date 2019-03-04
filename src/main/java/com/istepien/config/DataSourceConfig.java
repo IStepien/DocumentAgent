@@ -11,7 +11,6 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 
 
-
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -21,9 +20,9 @@ import java.util.Properties;
 @Configuration
 public class DataSourceConfig {
 
-    @Bean(initMethod="start",destroyMethod="stop")
-    public org.h2.tools.Server h2WebConsonleServer () throws SQLException {
-        return org.h2.tools.Server.createWebServer("-web","-webAllowOthers","-webDaemon","-webPort", "8083");
+    @Bean(initMethod = "start", destroyMethod = "stop")
+    public org.h2.tools.Server h2WebConsonleServer() throws SQLException {
+        return org.h2.tools.Server.createWebServer("-web", "-webAllowOthers", "-webDaemon", "-webPort", "8083");
     }
 
     @Bean
@@ -75,6 +74,7 @@ public class DataSourceConfig {
             }
         };
     }
+
     @Bean
     InitializingBean init() throws SQLException {
         Connection conn = dataSource().getConnection();
@@ -83,10 +83,13 @@ public class DataSourceConfig {
                 "INSERT INTO ROLES (ROLEID, ROLENAME) VALUES (2, 'ROLE_MODERATOR');\n" +
                 "INSERT INTO ROLES (ROLEID, ROLENAME) VALUES (1, 'ROLE_USER');" +
                 "INSERT  INTO USERS ( USERID, USERNAME, EMAIL, FIRSTNAME, LASTNAME, PASSWORD) VALUES (1, 'admin', 'admin', 'admin', 'admin',  '$2a$04$JdGOGTFh0wgdNXEVtMNKK.QIR0EZUkSPaEOo4reGcIh92h/CMY6Zu');" +
-                "INSERT INTO USER_ROLE  (USERID, ROLEID) VALUES (1, 3);"+
+                "INSERT INTO USER_ROLE  (USERID, ROLEID) VALUES (1, 3);" +
 
                 "INSERT  INTO USERS ( USERID, USERNAME, EMAIL, FIRSTNAME, LASTNAME, PASSWORD) VALUES (2, 'user1', 'user1', 'user1', 'user1',  '$2a$10$aVyJ7M1bVguaFg8TuKHMUebVsahCNOdFJEvnhuHx8ENALVxzWEsXC');" +
-                "INSERT INTO USER_ROLE  (USERID, ROLEID) VALUES (2, 1);" );
+                "INSERT INTO USER_ROLE  (USERID, ROLEID) VALUES (2, 1);" +
+
+                "INSERT  INTO USERS ( USERID, USERNAME, EMAIL, FIRSTNAME, LASTNAME, PASSWORD) VALUES (3, 'mod1', 'mod1', 'mod1', 'mod1',  '$2a$04$w0.a5qflEVGFqFDO2LRPbeAL8iCfiwH/.2G5BEqQNWDtPqU9VoPYS');" +
+                "INSERT INTO USER_ROLE  (USERID, ROLEID) VALUES (3, 2);");
         return () -> {
         };
     }

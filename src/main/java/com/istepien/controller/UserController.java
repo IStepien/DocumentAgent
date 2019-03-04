@@ -26,12 +26,12 @@ public class UserController {
     private UserService userService;
 
 
-    @GetMapping("/list")
+    @GetMapping("/allUsers")
     public String listUsers(Model model) {
 
         List<User> userList = userService.getAllUsers();
 
-        model.addAttribute(userList);
+        model.addAttribute("userList", userList);
 
         return "user-list";
     }

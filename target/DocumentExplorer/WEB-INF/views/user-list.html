@@ -18,14 +18,29 @@ Authenticated user roles:
         <th>First name:</th>
         <th>Last name:</th>
         <th>Email:</th>
+        <th>Username:</th>
         <th>Role:</th>
+        <th></th>
+        <th></th>
     </tr>
+    <td th:if="${#lists.isEmpty(userList)}">
+        No user available
+    </td>
     <tr th:each="user : ${userList}">
-        <td th:text="*{firstName}" />
-        <td th:text="*{lastName}" />
-        <td th:text="*{mail}" />
+        <td th:text="${user.firstName}" />
+        <td th:text="${user.lastName}" />
+        <td th:text="${user.email}" />
+        <td th:text="${user.username}"/>
+        <td th:text="${user.role.rolename}"/>
+        <td>ban this user </td>
+        <div sec:authorize="hasRole('ROLE_ADMIN')">
+        <td>delete user</td>
+        <td>unban</td>
+    </div>
     </tr>
 
 </table>
+<button type="button"><a th:href="@{/}">home</a></button>
+
 </body>
 </html>
