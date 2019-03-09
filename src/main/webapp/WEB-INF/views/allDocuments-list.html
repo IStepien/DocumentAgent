@@ -14,7 +14,7 @@
 </div>
 
 <div class="form">
-    <p>List of my documents</p>
+    <p>List of all documents</p>
     <form th:action="@{/documents/sortBy}" method="post">
 
         docId <input type="radio" name="value" value="docId">
@@ -24,7 +24,7 @@
         <input type="submit" value="sort">
     </form>
 </div>
-<div class="table">
+<div class="table table-striped">
     <table>
         <tr>
             <th>Id:</th>
@@ -34,7 +34,7 @@
             <th>Date modified:</th>
             <th>Comment:</th>
             <th>Added by:</th>
-            <th></th>
+            <th>Last modified by: </th>
             <th></th>
             <th></th>
         </tr>
@@ -50,11 +50,15 @@
             <td th:text="${document.docLastModified}"/>
             <td th:text="${document.docComment}"/>
             <td th:text="${document.user.username}"/>
+            <td> TODO: last modified by</td>
             <td><a th:href="@{/documents/formForUpdateDocument(docId=${document.docId})}">modify</a></td>
             <td><a th:href="@{/documents/showDocumentPreview(docId=${document.docId})}">preview doc</a>
             <td><a th:href="@{/documents/download(docId=${document.docId})}"> download</a></td>
             <div sec:authorize="hasRole('ROLE_ADMIN')">
                 <td><a th:href="@{/documents/deleteDocument(docId=${document.docId})}">delete</a></td>
+            </div>
+            <div sec:authorize="hasRole('ROLE_MODERATOR')">
+                <td> to be deleted</td>
             </div>
 
 

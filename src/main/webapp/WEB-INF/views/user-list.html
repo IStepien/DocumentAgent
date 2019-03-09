@@ -13,16 +13,19 @@ Authenticated user roles:
 <div sec:authorize="hasRole('ROLE_ADMIN')">    here is something visible for admin only </button>
 </div>
 <h1>Users List</h1>
-<table>
+<table class="table table-striped">
+    <thead>
     <tr>
-        <th>First name:</th>
-        <th>Last name:</th>
-        <th>Email:</th>
-        <th>Username:</th>
-        <th>Role:</th>
-        <th></th>
-        <th></th>
+        <th scope="col">First name:</th>
+        <th scope="col">Last name:</th>
+        <th scope="col">Email:</th>
+        <th scope="col">Username:</th>
+        <th scope="col">Role:</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
     </tr>
+    </thead>
+    <tbody>
     <td th:if="${#lists.isEmpty(userList)}">
         No user available
     </td>
@@ -38,7 +41,7 @@ Authenticated user roles:
         <td>unban</td>
     </div>
     </tr>
-
+    </tbody>
 </table>
 <button type="button"><a th:href="@{/}">home</a></button>
 

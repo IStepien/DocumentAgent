@@ -34,8 +34,18 @@ public class User {
     private Set<Document> documentSet;
     @OneToMany(mappedBy = "user")
     private Set<Message> messageSet;
+    @OneToMany(mappedBy = "user")
+    private Set<Comment> commentSet;
 
-      public User() {
+    public Set<Comment> getCommentSet() {
+        return commentSet;
+    }
+
+    public void setCommentSet(Set<Comment> commentSet) {
+        this.commentSet = commentSet;
+    }
+
+    public User() {
     }
 
     public Long getUserId() {

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <link rel="stylesheet" href="../resources/style.css" type="text/css"/>
+    <meta charset="UTF-8">
+    <title>Comments</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Document title: </th>
+        <th>Comment: </th>
+        <th>Added by: </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${#lists.isEmpty(allComments)}">
+        No comments available
+    </tr>
+    <tr th:each="comment : ${allComments}">
+        <td th:text="${comment.document.docTitle}"/>
+        <td th:text="${comment.text}"/>
+        <td th:text="${comment.user.username}"/>
+        <td th:hidden="${comment.commentId}"/>
+        <td><a th:href="@{/comments/modify(commentId=${comment.commentId})}"> modify </a> </td>
+
+    </tr>
+    </tbody>
+</table>
+<button type="button"><a th:href="@{/}">home</a></button>
+
+</body>
+</html>

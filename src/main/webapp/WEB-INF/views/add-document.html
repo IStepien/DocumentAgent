@@ -20,8 +20,6 @@ Authenticated user roles:
 <form action="#" th:action="@{saveDocument}" th:object="${document}" method="post">
     <input type="text" th:field="*{docTitle}" th:required="required" placeholder="Title"/></p>
     <input type="text" th:field="*{docDescription}" placeholder="Description" /></p>
-    <input type="text" th:field="*{docComment}" placeholder="Comment" /></p>
-
     <p>File: <input type="file" th:field="*{file}" name="file" th:required="required"></p>
 
 

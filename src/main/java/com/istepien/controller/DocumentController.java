@@ -70,16 +70,17 @@ public class DocumentController {
 
         User current = userService.getUserByName(principal.getName());
 
-         documents = documents.stream().filter(doc -> doc.getUser().getUsername().equals(principal.getName())).collect(Collectors.toList());
+        documents = documents.stream().filter(doc -> doc.getUser().getUsername().equals(principal.getName())).collect(Collectors.toList());
 
         model.addAttribute("documentList", documents);
         return "document-list";
     }
+
     @GetMapping("/allDocuments")
     public String listAllDocuments(Model model) {
         List<Document> allDocuments = documentService.getAllDocuments();
 
-        model.addAttribute("allDocuments", allDocuments );
+        model.addAttribute("allDocuments", allDocuments);
 
         return "allDocuments-list";
     }
@@ -104,9 +105,7 @@ public class DocumentController {
 
     @PostMapping("/updateDocument")
     public String updateDocument(@ModelAttribute("document") Document document, Principal principal) {
-
-        User current = userService.getUserByName(principal.getName());
-        document.setUser(current);
+        document.setUser(userService.getUserByName(document.getUser().getUsername()));
         document.setDocDateAdded(documentService.getDocument(document.getDocId()).getDocDateAdded());
         document.setDocLastModified(LocalDate.now());
         documentService.saveDocument(document);

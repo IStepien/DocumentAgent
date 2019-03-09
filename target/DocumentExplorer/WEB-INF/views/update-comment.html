@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"><html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <link rel="stylesheet" href="../resources/style.css" type="text/css"/>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Comment:</p>
+<form action="#" th:action="@{updateComment}" th:object="${comment}" method="post">
+    <input type="hidden" th:field="*{commentId}">
+    <input type="hidden" th:field="*{document.docId}">
+    <input type="hidden" th:field="*{user.username}">
+    <input type="text" th:field="*{text}" placeholder="type your comment"/>
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+<button type="button"><a th:href="@{/}">home</a> </button>
+
+</body>
+</html>

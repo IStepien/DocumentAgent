@@ -1,16 +1,12 @@
 package com.istepien.model;
 
-import com.sun.deploy.security.ValidationState;
 import com.sun.istack.NotNull;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -24,8 +20,7 @@ public class Document {
     private String docTitle;
     @Column(name = "description")
     private String docDescription;
-    @Column(name = "comment")
-    private String docComment;
+
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "date_added")
     private LocalDate docDateAdded;
@@ -45,6 +40,9 @@ public class Document {
     @JoinColumn(name = "message_id", nullable = true)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Message message;
+
+    @OneToMany(mappedBy = "document")
+    private Set<Comment> commentSet;
 
 
     public Document() {
@@ -74,12 +72,20 @@ public class Document {
         this.docDescription = docDescription;
     }
 
-    public String getDocComment() {
-        return docComment;
+    public Message getMessage() {
+        return message;
     }
 
-    public void setDocComment(String docComment) {
-        this.docComment = docComment;
+    public void setMessage(Message message) {
+        this.message = message;
+    }
+
+    public Set<Comment> getCommentSet() {
+        return commentSet;
+    }
+
+    public void setCommentSet(Set<Comment> commentSet) {
+        this.commentSet = commentSet;
     }
 
     public LocalDate getDocDateAdded() {
@@ -120,7 +126,6 @@ public class Document {
                 "docId=" + docId +
                 ", docTitle='" + docTitle + '\'' +
                 ", docDescription='" + docDescription + '\'' +
-                ", docComment='" + docComment + '\'' +
                 ", docDateAdded=" + docDateAdded +
                 ", docLastModified=" + docLastModified +
                 ", file=" + Arrays.toString(file) +

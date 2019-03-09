@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
-    <link rel="stylesheet" href="../resources/style.css" type="text/css"/>
+    <link rel="stylesheet" href="resources/style.css" type="text/css"/>
     <meta charset="UTF-8">
     <title>Start</title>
 </head>
@@ -35,6 +35,9 @@ Authenticated user roles:
 </div>
 <div sec:authorize="hasAnyRole('ROLE_MODERATOR, ROLE_ADMIN')">
     <button type="button"><a th:href="@{/users/allUsers}"> Go to list of users</a> </button>
+</div>
+<div sec:authorize="hasRole('ROLE_MODERATOR')">
+    <button type="button"> TODO: send message to ADMIN</button>
 </div>
 
 </body>
