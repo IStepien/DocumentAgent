@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <link rel="stylesheet" href="../resources/style.css" type="text/css"/>
+    <meta charset="UTF-8">
+    <title>documents-toBeDeleted</title>
+</head>
+<body>
+Documents to be deleted:
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>Document Id: </th>
+            <th>Document title: </th>
+            <th>Decision</th>
+        </tr>
+        </thead>
+        <tbody>
+        <td th:if="${#sets.isEmpty(toBeDeleted)}">
+            No documents available
+        </td>
+        <tr th:each="document : ${toBeDeleted}">
+
+            <td th:text="${document.docId}"/>
+            <td th:text="${document.docTitle}"/>
+            <td><a th:href="@{/documents/deleteDocument(docId=${document.docId})}"> approve </a></td>
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

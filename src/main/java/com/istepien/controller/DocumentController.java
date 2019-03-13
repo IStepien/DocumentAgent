@@ -90,7 +90,7 @@ public class DocumentController {
 
         documentService.deleteDocument(docId);
 
-        return "redirect:list";
+        return "home";
     }
 
     @GetMapping("/formForUpdateDocument")
@@ -220,5 +220,7 @@ public class DocumentController {
 
         return "document-list";
     }
+
+
 
 }

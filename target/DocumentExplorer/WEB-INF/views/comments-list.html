@@ -25,6 +25,7 @@
         <td th:text="${comment.user.username}"/>
         <td th:hidden="${comment.commentId}"/>
         <td><a th:href="@{/comments/modify(commentId=${comment.commentId})}"> modify </a> </td>
+        <td>to be deleted </td>
 
     </tr>
     </tbody>

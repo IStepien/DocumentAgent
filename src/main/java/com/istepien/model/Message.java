@@ -21,8 +21,11 @@ public class Message {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 
-    @OneToMany(mappedBy = "message")
-    private Set<Document> documentSet;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "document_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Document document;
 
    
     public Message() {
@@ -53,12 +56,12 @@ public class Message {
         this.messageText = messageText;
     }
 
-    public Set<Document> getDocumentSet() {
-        return documentSet;
+    public Document getDocument() {
+        return document;
     }
 
-    public void setDocumentSet(Set<Document> documentSet) {
-        this.documentSet = documentSet;
+    public void setDocument(Document document) {
+        this.document = document;
     }
 
     @Override

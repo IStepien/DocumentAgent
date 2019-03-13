@@ -12,8 +12,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Controller
@@ -24,19 +26,25 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private RoleService roleService;
 
 
     @GetMapping("/allUsers")
-    public String listUsers(Model model) {
+    public String listUsers(Model model, Principal principal) {
 
         List<User> userList = userService.getAllUsers();
 
+        User currentUser = userService.getUserByName(principal.getName());
+        if (currentUser.getRole().getRolename().equals("ROLE_MODERATOR")) {
+            userList = userList.stream().filter(u -> u.getRole().getRolename().equals("ROLE_USER")).collect(Collectors.toList());
+        }
         model.addAttribute("userList", userList);
 
         return "user-list";
     }
 
-    @GetMapping("/showFormForAdd")
+      @GetMapping("/showFormForAdd")
     public String showFormForAdd(Model theModel) {
 
         User user = new User();

@@ -16,7 +16,7 @@ Authenticated user roles:
     <input type="hidden" th:field="*{user.username}" value="username" name="username">
     <p>docTitlee: <input type="text" th:field="*{docTitle}" /></p>
     <p>docDescription: <input type="text" th:field="*{docDescription}" /></p>
-    <p>file: <input type="file" th:field="*{file}" name="file"></p>
+    <input type="hidden" th:field="*{file}"/>
 
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 </form>

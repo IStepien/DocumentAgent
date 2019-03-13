@@ -36,10 +36,8 @@ public class Document {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = true)
-    @JoinColumn(name = "message_id", nullable = true)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    private Message message;
+    @OneToMany(mappedBy = "document", cascade = CascadeType.REMOVE)
+    private Set<Message> messageSet;
 
     @OneToMany(mappedBy = "document")
     private Set<Comment> commentSet;
@@ -72,12 +70,12 @@ public class Document {
         this.docDescription = docDescription;
     }
 
-    public Message getMessage() {
-        return message;
+    public Set<Message> getMessageSet() {
+        return messageSet;
     }
 
-    public void setMessage(Message message) {
-        this.message = message;
+    public void setMessageSet(Set<Message> messageSet) {
+        this.messageSet = messageSet;
     }
 
     public Set<Comment> getCommentSet() {
