@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <link rel="stylesheet" href="../resources/style.css" type="text/css"/>
+    <meta charset="UTF-8">
+    <title>Comments-toBeDeleted</title>
+</head>
+<body>
+Comments to be deleted:
+<div>
+    <table>
+
+        <tr>
+            <th>Comment text</th>
+            <th>Comment added by</th>
+            <th>Decision</th>
+            <th></th>
+        </tr>
+
+        <td th:if="${#sets.isEmpty(toBeDeleted)}">
+            No documents available
+        </td>
+        <tr th:each="comment : ${toBeDeleted}">
+            <td th:hidden="${comment.commentId}"/>
+            <td th:text="${comment.text}"/>
+            <td th:text="${comment.user.username}"/>
+            <td><a th:href="@{/comments/deleteComment(commentId=${comment.commentId})}"> approve </a></td>
+        </tr>
+    </table>
+    <button type="button"><a th:href="@{/}">home</a> </button>
+    <button type="button"> <a th:href="@{/documents/allDocuments}">List of all documents</a> </button>
+
+</div>
+</body>
+</html>

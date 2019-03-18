@@ -27,6 +27,10 @@ public class Message {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Document document;
 
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "comment_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Comment comment;
    
     public Message() {
     }
@@ -62,6 +66,14 @@ public class Message {
 
     public void setDocument(Document document) {
         this.document = document;
+    }
+
+    public Comment getComment() {
+        return comment;
+    }
+
+    public void setComment(Comment comment) {
+        this.comment = comment;
     }
 
     @Override

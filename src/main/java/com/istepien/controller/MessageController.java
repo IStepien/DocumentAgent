@@ -1,13 +1,7 @@
 package com.istepien.controller;
 
-import com.istepien.model.Document;
-import com.istepien.model.Message;
-import com.istepien.model.Role;
-import com.istepien.model.User;
-import com.istepien.service.DocumentService;
-import com.istepien.service.MessageService;
-import com.istepien.service.RoleService;
-import com.istepien.service.UserService;
+import com.istepien.model.*;
+import com.istepien.service.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +31,8 @@ public class MessageController {
     private MessageService messageService;
     @Autowired
     private DocumentService documentService;
+    @Autowired
+    private CommentService commentService;
 
     @GetMapping("/requestForUpgrade")
     public String requestForUpgrade(@RequestParam(name = "username") String username, Model model) {
@@ -97,5 +93,31 @@ public class MessageController {
         model.addAttribute("toBeDeleted", toBeDeleted);
 
         return "documents-toBeDeleted";
+    }
+    @GetMapping("/commentsToBeDeleted")
+    public String commentToBeDeleted(@RequestParam(name = "commentId")Long commentId, Principal principal){
+        Message message = new Message();
+        Comment current = commentService.getComment(commentId);
+        message.setComment(current);
+        message.setDocument(current.getDocument());
+        message.setUser(userService.getUserByName(principal.getName()));
+
+        messageService.saveMessage(message);
+
+
+        return "allDocuments-list";
+    }
+    @GetMapping("/getAllCommentsToBeDeleted")
+    public String getAllCommentsToBeDeleted(Model model) {
+        List<Message> messageList = messageService.getAllMessages();
+
+        List<Comment> toBeDeleted = new ArrayList<>();
+        for ( Message message : messageList){
+            toBeDeleted.add(message.getComment());
+        }
+
+        model.addAttribute("toBeDeleted", toBeDeleted);
+
+        return "comments-toBeDeleted";
     }
 }

@@ -78,4 +78,10 @@ public class CommentController {
 
         return "home";
     }
+    @GetMapping("/deleteComment")
+    public String deleteComment(@RequestParam(name = "commentId") Long commentId){
+        commentService.deleteComment(commentId);
+        return "home";
+    }
+
 }

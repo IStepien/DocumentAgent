@@ -25,8 +25,9 @@
         <td th:text="${comment.user.username}"/>
         <td th:hidden="${comment.commentId}"/>
         <td><a th:href="@{/comments/modify(commentId=${comment.commentId})}"> modify </a> </td>
-        <td>to be deleted </td>
-
+        <div sec:authorize="hasRole('ROLE_MODERATOR')">
+        <td><a th:href="@{/messages/commentsToBeDeleted(commentId=${comment.commentId})}"> to be deleted </a></td>
+        </div>
     </tr>
     </tbody>
 </table>

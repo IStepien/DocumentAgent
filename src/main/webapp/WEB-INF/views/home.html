@@ -33,6 +33,8 @@ Authenticated user roles:
     <button type="button"><a th:href="@{/messages/getAllUpgradeRequests}"> See users to be upgraded to moderator
         role: </a></button>
     <button type="button"><a th:href="@{/messages/getAllDocumentsToBeDeleted}"> See list of docs to be deleted </a></button>
+    <button type="button"><a th:href="@{/messages/getAllCommentsToBeDeleted}"> See list of comments to be deleted </a></button>
+
 </div>
 <div sec:authorize="hasAnyRole('ROLE_MODERATOR, ROLE_ADMIN')">
     <button type="button"><a th:href="@{/users/allUsers}"> Go to list of all users</a> </button>
