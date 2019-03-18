@@ -7,9 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 import java.util.ArrayList;
@@ -120,4 +118,21 @@ public class MessageController {
 
         return "comments-toBeDeleted";
     }
+    @GetMapping("/sendMessage")
+    public String sendMessage(Model model){
+        Message message = new Message();
+
+        model.addAttribute(message);
+
+        return "sendMessage";
+    }
+    @PostMapping("/saveMessage")
+    public String saveMessage(@ModelAttribute (name = "message") Message message, Principal principal){
+        message.setUser(userService.getUserByName(principal.getName()));
+        messageService.saveMessage(message);
+        logger.info("save-Message " + message.getUser().getUsername() + message.getMessageText());
+
+        return "home";
+    }
+
 }
