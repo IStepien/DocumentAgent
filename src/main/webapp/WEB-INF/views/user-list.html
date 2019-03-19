@@ -40,6 +40,7 @@ Authenticated user roles:
         <div sec:authorize="hasRole('ROLE_ADMIN')">
         <td><a th:href="@{/users/deleteUser(userId=${user.userId})}"> delete user </a> </td>
         <td>unban</td>
+            <td><a th:href="@{/users/changeRole(userId=${user.userId})}"> change role</a> </td>
     </div>
     </tr>
     </tbody>

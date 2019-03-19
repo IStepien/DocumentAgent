@@ -45,7 +45,7 @@ public class UserController {
         return "user-list";
     }
 
-      @GetMapping("/showFormForAdd")
+    @GetMapping("/showFormForAdd")
     public String showFormForAdd(Model theModel) {
 
         User user = new User();
@@ -62,13 +62,31 @@ public class UserController {
     }
 
 
-@GetMapping("/deleteUser")
-    public String deleteUser(@RequestParam(name = "userId") Long userId){
+    @GetMapping("/deleteUser")
+    public String deleteUser(@RequestParam(name = "userId") Long userId) {
         userService.deleteUser(userId);
 
         return "home";
-}
+    }
+
+    @GetMapping("/changeRole")
+    public String changeRole(@RequestParam(name = "userId") Long userId) {
+        User currentUser = userService.getUser(userId);
+        Role currentUserRole = currentUser.getRole();
+
+        
+        if (currentUserRole.getRolename().equals("ROLE_MODERATOR")){
+            currentUser.setRole(roleService.getRoleByName("ROLE_USER"));
+        } else {
+            currentUser.setRole(roleService.getRoleByName("ROLE_MODERATOR"));
+        }
 
 
+        userService.updateUser(currentUser);
+
+
+        return "home";
+
+    }
 
 }
