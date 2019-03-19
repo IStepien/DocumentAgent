@@ -39,6 +39,7 @@ public class UserController {
         if (currentUser.getRole().getRolename().equals("ROLE_MODERATOR")) {
             userList = userList.stream().filter(u -> u.getRole().getRolename().equals("ROLE_USER")).collect(Collectors.toList());
         }
+        userList.remove(userService.getUserByName(principal.getName()));
         model.addAttribute("userList", userList);
 
         return "user-list";
@@ -61,11 +62,13 @@ public class UserController {
     }
 
 
-//    public User getUser(Long id);
-//
-//    public void deleteUser(Long id);
-//
-//    public void updateUser(User user);
+@GetMapping("/deleteUser")
+    public String deleteUser(@RequestParam(name = "userId") Long userId){
+        userService.deleteUser(userId);
+
+        return "home";
+}
+
 
 
 }
