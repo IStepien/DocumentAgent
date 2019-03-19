@@ -36,7 +36,6 @@ public class CommentController {
         Comment comment = new Comment();
         comment.setDocument(documentService.getDocument(docId));
         model.addAttribute("comment", comment);
-        logger.info("add-comment " + comment.getDocument().getDocId());
 
         return "add-comment";
     }
@@ -45,7 +44,6 @@ public class CommentController {
     public String saveComment(@ModelAttribute(name = "comment") Comment comment, Principal principal) {
         comment.setUser(userService.getUserByName(principal.getName()));
         commentService.saveComment(comment);
-        logger.info("save-comment " + comment.getUser().getUsername() + comment.getDocument().getDocId());
         return "home";
     }
 
@@ -56,7 +54,7 @@ public class CommentController {
 
         model.addAttribute("allComments", allComments);
 
-        logger.info("List size: " + allComments.size());
+
 
         return "comments-list";
 

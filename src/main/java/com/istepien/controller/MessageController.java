@@ -134,5 +134,25 @@ public class MessageController {
 
         return "home";
     }
+@GetMapping("/getAllTextMessages")
+    public String getAllTextMessages(Model model){
+        List<Message> messages = messageService.getAllMessages();
 
+        List<Message> textMessages = new ArrayList<>();
+        for (Message message : messages){
+            if(message.getMessageText()!=null){
+                textMessages.add(message);
+            }
+        }
+        model.addAttribute("textMessages", textMessages);
+        logger.info("Text messages list size"+textMessages.size());
+
+        return "textMessages-list";
+    }
+    @GetMapping("/deleteMessage")
+    public String deleteMessage(@RequestParam(name = "messageId") Long messageId){
+        messageService.deleteMessage(messageId);
+
+        return "home";
+    }
 }
