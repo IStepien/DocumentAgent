@@ -34,12 +34,13 @@ public class UserController {
     public String listUsers(Model model, Principal principal) {
 
         List<User> userList = userService.getAllUsers();
+        userList.removeIf(user -> user.getRole().getRolename().equals("ROLE_ADMIN"));
 
         User currentUser = userService.getUserByName(principal.getName());
         if (currentUser.getRole().getRolename().equals("ROLE_MODERATOR")) {
             userList = userList.stream().filter(u -> u.getRole().getRolename().equals("ROLE_USER")).collect(Collectors.toList());
         }
-        userList.remove(userService.getUserByName(principal.getName()));
+
         model.addAttribute("userList", userList);
 
         return "user-list";
@@ -74,7 +75,7 @@ public class UserController {
         User currentUser = userService.getUser(userId);
         Role currentUserRole = currentUser.getRole();
 
-        
+
         if (currentUserRole.getRolename().equals("ROLE_MODERATOR")){
             currentUser.setRole(roleService.getRoleByName("ROLE_USER"));
         } else {

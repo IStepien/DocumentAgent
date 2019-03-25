@@ -39,7 +39,7 @@ public class Document {
     @OneToMany(mappedBy = "document", cascade = CascadeType.REMOVE)
     private Set<Message> messageSet;
 
-    @OneToMany(mappedBy = "document")
+    @OneToMany(mappedBy = "document", cascade = CascadeType.REMOVE)
     private Set<Comment> commentSet;
 
 

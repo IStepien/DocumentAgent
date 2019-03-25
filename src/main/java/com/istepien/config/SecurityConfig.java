@@ -32,6 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
 
     }
+
     @Bean("passwordEncoder")
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -41,9 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/").authenticated()
-//                .hasAnyRole()
-//                .antMatchers("/users/**").hasRole("ADMIN")
-               .and()
+                .and()
                 .formLogin()
                 .loginPage("/showLoginPage")
                 .loginProcessingUrl("/authenticateUser")
@@ -55,12 +54,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
-
     @Bean
     public AuthenticationManager customAuthenticationManager() throws Exception {
         return authenticationManager();
     }
-
 
 
 }
