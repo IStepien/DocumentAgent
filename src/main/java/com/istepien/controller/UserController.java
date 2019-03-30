@@ -89,5 +89,12 @@ public class UserController {
         return "home";
 
     }
+    @GetMapping("/lockUser")
+    public String lockUser(@RequestParam(name = "userId") Long userId){
+        User currentUser = userService.getUser(userId);
+
+
+        return "home";
+    }
 
 }

@@ -82,13 +82,13 @@ public class DataSourceConfig {
         stmt.executeUpdate("INSERT INTO ROLES (ROLEID, ROLENAME) VALUES (3, 'ROLE_ADMIN');\n" +
                 "INSERT INTO ROLES (ROLEID, ROLENAME) VALUES (2, 'ROLE_MODERATOR');\n" +
                 "INSERT INTO ROLES (ROLEID, ROLENAME) VALUES (1, 'ROLE_USER');" +
-                "INSERT  INTO USERS ( USERID, USERNAME, EMAIL, FIRSTNAME, LASTNAME, PASSWORD) VALUES (1, 'admin', 'admin', 'admin', 'admin',  '$2a$04$JdGOGTFh0wgdNXEVtMNKK.QIR0EZUkSPaEOo4reGcIh92h/CMY6Zu');" +
+                "INSERT  INTO USERS ( USERID, USERNAME, EMAIL, FIRSTNAME, LASTNAME, PASSWORD, ISBLOCKED) VALUES (1, 'admin', 'admin', 'admin', 'admin',  '$2a$04$JdGOGTFh0wgdNXEVtMNKK.QIR0EZUkSPaEOo4reGcIh92h/CMY6Zu', false );" +
                 "INSERT INTO USER_ROLE  (USERID, ROLEID) VALUES (1, 3);" +
 
-                "INSERT  INTO USERS ( USERID, USERNAME, EMAIL, FIRSTNAME, LASTNAME, PASSWORD) VALUES (2, 'user1', 'user1', 'user1', 'user1',  '$2a$10$aVyJ7M1bVguaFg8TuKHMUebVsahCNOdFJEvnhuHx8ENALVxzWEsXC');" +
+                "INSERT  INTO USERS ( USERID, USERNAME, EMAIL, FIRSTNAME, LASTNAME, PASSWORD, ISBLOCKED) VALUES (2, 'user1', 'user1', 'user1', 'user1',  '$2a$10$aVyJ7M1bVguaFg8TuKHMUebVsahCNOdFJEvnhuHx8ENALVxzWEsXC', false);" +
                 "INSERT INTO USER_ROLE  (USERID, ROLEID) VALUES (2, 1);" +
 
-                "INSERT  INTO USERS ( USERID, USERNAME, EMAIL, FIRSTNAME, LASTNAME, PASSWORD) VALUES (3, 'mod1', 'mod1', 'mod1', 'mod1',  '$2a$04$w0.a5qflEVGFqFDO2LRPbeAL8iCfiwH/.2G5BEqQNWDtPqU9VoPYS');" +
+                "INSERT  INTO USERS ( USERID, USERNAME, EMAIL, FIRSTNAME, LASTNAME, PASSWORD, ISBLOCKED) VALUES (3, 'mod1', 'mod1', 'mod1', 'mod1',  '$2a$04$w0.a5qflEVGFqFDO2LRPbeAL8iCfiwH/.2G5BEqQNWDtPqU9VoPYS', false);" +
                 "INSERT INTO USER_ROLE  (USERID, ROLEID) VALUES (3, 2);");
         return () -> {
         };

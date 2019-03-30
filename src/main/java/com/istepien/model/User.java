@@ -36,6 +36,15 @@ public class User {
     private Set<Message> messageSet;
     @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
     private Set<Comment> commentSet;
+    private boolean isBlocked;
+
+    public boolean isBlocked() {
+        return isBlocked;
+    }
+
+    public void setBlocked(boolean blocked) {
+        isBlocked = blocked;
+    }
 
     public Set<Comment> getCommentSet() {
         return commentSet;
