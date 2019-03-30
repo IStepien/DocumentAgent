@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org"       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <link rel="stylesheet" href="../resources/style.css" type="text/css"/>
     <meta charset="UTF-8">
@@ -7,10 +7,10 @@
 </head>
 <body>
 Authenticated username:
-<div sec:authentication ="principal.username"> </div>
+<div sec:authentication="principal.username"></div>
 Authenticated user roles:
-<div sec:authentication ="principal.authorities"> </div>
-<div sec:authorize="hasRole('ROLE_ADMIN')">    here is something visible for admin only </button>
+<div sec:authentication="principal.authorities"></div>
+<div sec:authorize="hasRole('ROLE_ADMIN')"> here is something visible for admin only </button>
 </div>
 <h1>Users List</h1>
 <table class="table table-striped">
@@ -21,8 +21,13 @@ Authenticated user roles:
         <th scope="col">Email:</th>
         <th scope="col">Username:</th>
         <th scope="col">Role:</th>
+        <th scope="col">Is banned</th>
         <th scope="col"></th>
         <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+
     </tr>
     </thead>
     <tbody>
@@ -30,18 +35,24 @@ Authenticated user roles:
         No user available
     </td>
     <tr th:each="user : ${userList}">
-        <td th:text="${user.firstName}" />
-        <td th:text="${user.lastName}" />
-        <td th:text="${user.email}" />
+        <td th:text="${user.firstName}"/>
+        <td th:text="${user.lastName}"/>
+        <td th:text="${user.email}"/>
         <td th:text="${user.username}"/>
         <td th:text="${user.role.rolename}"/>
+        <td th:text="${user.isBlocked}"/>
         <td th:hidden="${user.userId}"/>
-        <td>ban this user </td>
+        <div th:if="${!user.isBlocked}">
+            <td ><a th:href="@{/users/banUser(userId=${user.userId})}">ban this user </a></td>
+        </div>
         <div sec:authorize="hasRole('ROLE_ADMIN')">
-        <td><a th:href="@{/users/deleteUser(userId=${user.userId})}"> delete user </a> </td>
-        <td>unban</td>
-            <td><a th:href="@{/users/changeRole(userId=${user.userId})}"> change role</a> </td>
-    </div>
+            <td><a th:href="@{/users/deleteUser(userId=${user.userId})}"> delete user </a></td>
+            <div th:if="${user.isBlocked}">
+            <td><a th:href="@{/users/unbanUser(userId=${user.userId})}">unban this
+                user </a></td>
+            </div>
+            <td><a th:href="@{/users/changeRole(userId=${user.userId})}"> change role</a></td>
+        </div>
     </tr>
     </tbody>
 </table>

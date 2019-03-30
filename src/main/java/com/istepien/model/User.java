@@ -22,6 +22,8 @@ public class User {
     private String lastName;
     @Column
     private String email;
+    @Column
+    private boolean isBlocked;
     @ManyToOne
     @JoinTable(name = "user_role",
             joinColumns = @JoinColumn(name = "userId"),
@@ -36,13 +38,12 @@ public class User {
     private Set<Message> messageSet;
     @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
     private Set<Comment> commentSet;
-    private boolean isBlocked;
 
-    public boolean isBlocked() {
+    public boolean getIsBlocked() {
         return isBlocked;
     }
 
-    public void setBlocked(boolean blocked) {
+    public void setIsBlocked(boolean blocked) {
         isBlocked = blocked;
     }
 

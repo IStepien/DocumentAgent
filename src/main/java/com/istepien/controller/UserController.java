@@ -89,12 +89,22 @@ public class UserController {
         return "home";
 
     }
-    @GetMapping("/lockUser")
-    public String lockUser(@RequestParam(name = "userId") Long userId){
+    @GetMapping("/banUser")
+    public String banUser(@RequestParam(name = "userId") Long userId){
         User currentUser = userService.getUser(userId);
-
+            currentUser.setIsBlocked(true);
+            userService.updateUser(currentUser);
 
         return "home";
     }
+    @GetMapping("/unbanUser")
+    public String unbanUser(@RequestParam(name = "userId") Long userId){
+        User currentUser = userService.getUser(userId);
+        currentUser.setIsBlocked(false);
+        userService.updateUser(currentUser);
+
+        return "home";
+    }
+
 
 }
