@@ -44,15 +44,16 @@ public class MessageController {
     @GetMapping("/getAllUpgradeRequests")
     public String getAllUpgradeRequests(Model model) {
         List<Message> messageList = messageService.getAllMessages();
-
-        List<String> toBeUpgraded = new ArrayList<>();
+        Role user = roleService.getRoleByName("ROLE_USER");
+        Set<String> toBeUpgraded = new HashSet<>();
         for (Message m : messageList) {
+            if(m.getUser().getRole().getRolename().equals(user.getRolename()))
             toBeUpgraded.add(m.getUser().getUsername());
         }
         model.addAttribute("toBeUpgraded", toBeUpgraded);
 
 
-        return "list";
+        return "usersToBeUpgraded-list";
     }
 
 
@@ -76,7 +77,7 @@ public class MessageController {
         messageService.saveMessage(message);
 
 
-        return "allDocuments-list";
+        return "home";
     }
 
     @GetMapping("/getAllDocumentsToBeDeleted")

@@ -17,7 +17,7 @@ Documents to be deleted:
         </tr>
         </thead>
         <tbody>
-        <td th:if="${#sets.isEmpty(toBeDeleted)}">
+        <td th:if="${#lists.isEmpty(toBeDeleted)}">
             No documents available
         </td>
         <tr th:each="document : ${toBeDeleted}">

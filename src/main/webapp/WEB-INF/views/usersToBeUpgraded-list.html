@@ -13,7 +13,7 @@
         <th>User Id </th>
         <th>Decision</th>
     </tr>
-    <td th:if="${#lists.isEmpty(toBeUpgraded)}">
+    <td th:if="${#sets.isEmpty(toBeUpgraded)}">
         No users available
     </td>
     <tr th:each=" username: ${toBeUpgraded}">
@@ -21,6 +21,8 @@
         <td><a th:href="@{/messages/upgradeRole(username=${username})}">approve</a></td>
 
     </tr>
+    <button type="button"><a th:href="@{/}">home</a> </button>
+
 </table>
 
 
