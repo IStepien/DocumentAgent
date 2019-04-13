@@ -1,34 +1,116 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-    <link rel="stylesheet" href="../resources/style.css" type="text/css"/>
-    <meta charset="UTF-8">
-    <title>Comments</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../resources/style2.css" type="text/css"/>
+    <title>Messages</title>
 </head>
 <body>
-<table>
-    <thead>
-    <tr>
 
-        <th>Message</th>
-        <th>Added by: </th>
-        <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:if="${#lists.isEmpty(textMessages)}">
-        No messages available
-    </tr>
-    <tr th:each="message : ${textMessages}">
-        <td th:text="${message.messageText}"/>
-        <td th:text="${message.user.username}"/>
-        <td th:hidden="${message.messageId}"/>
-        <td><a th:href="@{/messages/deleteMessage(messageId=${message.messageId})}"> delete </a></td>
+<div class="container-fluid">
+    <div class="jumbotron">
+        <h1>Document Explorer</h1>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="container">
+                <div class="btn-group-vertical">
+                    <button type="button" class="btn btn-success">
+                        <a th:href="@{/}">Home</a>
+                    </button>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                            Documents
+                        </button>
+                        <div class="dropdown-menu">
+                            <a th:class="dropdown-item" th:href="@{/documents/formForAddDocument}" >Add document</a></br>
+                            <a  th:class="dropdown-item"  th:href="@{/documents/list}">show my documents</a></br>
+                            <a th:class="dropdown-item" sec:authorize="hasAnyRole('ROLE_MODERATOR, ROLE_ADMIN')" th:href="@{/documents/allDocuments}">show all documents</a></br>
+                            <a th:class="dropdown-item" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/messages/getAllDocumentsToBeDeleted}" >show documents to be deleted</a>
 
-    </tr>
-    </tbody>
-</table>
-<button type="button"><a th:href="@{/}">home</a></button>
+                        </div>
+                    </div>
+                    <div class="btn-group" sec:authorize="hasRole('ROLE_USER')">
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                            User
+                        </button>
+                        <div class="dropdown-menu">
+                            <a th:class="dropdown-item" sec:authorize="hasRole('ROLE_USER')" th:href="@{/messages/requestForUpgrade(username=${#authentication.name})}">request role upgrade</a></br>
+                            </br>
+                        </div>
+                    </div>
+
+                    <div class="btn-group" sec:authorize="hasRole('ROLE_ADMIN')">
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                            Admin
+                        </button>
+                        <div class="dropdown-menu">
+                            <a th:class="dropdown-item" th:href="@{/messages/getAllUpgradeRequests}" >Show users to be upgraded to moderator
+                                role</a></br>
+                            <a th:class="dropdown-item" th:href="@{/messages/getAllCommentsToBeDeleted}" >show comments to be deleted</a></br>
+                            <a th:class="dropdown-item" th:href="@{/messages/getAllTextMessages}" >show messages</a></br>
+                            <a th:class="dropdown-item" th:href="@{/users/allUsers}" class="button">show all users</a>
+
+                        </div>
+                    </div>
+
+                    <div class="btn-group" sec:authorize="hasRole('ROLE_MODERATOR')">
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                            Moderator
+                        </button>
+                        <div class="dropdown-menu">
+                            <a th:class="dropdown-item" th:href="@{/users/allUsers}" class="button">show all users</a></br>
+                            <a th:class="dropdown-item" th:href="@{/messages/sendMessage}" class="button">send a message to ADMIN</a>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+
+                    <th>Message</th>
+                    <th>Added by: </th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:if="${#lists.isEmpty(textMessages)}">
+                    No messages available
+                </tr>
+                <tr th:each="message : ${textMessages}">
+                    <td th:text="${message.messageText}"/>
+                    <td th:text="${message.user.username}"/>
+                    <td th:hidden="${message.messageId}"/>
+                    <td><a th:href="@{/messages/deleteMessage(messageId=${message.messageId})}"> delete </a></td>
+
+                </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <p sec:authentication ="principal.username"></p>
+            <p sec:authentication ="principal.authorities"></p>
+            <div class="button">
+                <form th:action="@{/logout}" method="post">
+                    <input type="submit" value="logout">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

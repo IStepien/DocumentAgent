@@ -104,7 +104,7 @@ public class MessageController {
         messageService.saveMessage(message);
 
 
-        return "allDocuments-list";
+        return "home";
     }
     @GetMapping("/getAllCommentsToBeDeleted")
     public String getAllCommentsToBeDeleted(Model model) {
