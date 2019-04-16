@@ -75,7 +75,7 @@
             </div>
         </div>
         <div class="col-sm-8">
-            <embed th:src="@{documents/show/${docId}}"/>
+            <embed th:src="${docId}}"/>
         </div>
         <div class="col-sm-2">
             <p sec:authentication ="principal.username"></p>

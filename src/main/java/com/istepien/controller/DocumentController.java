@@ -113,22 +113,22 @@ public class DocumentController {
         return "home";
     }
 
-    @GetMapping("/showDocumentPreview")
-    public ModelAndView showDocumentPreview(@RequestParam(name = "docId") Long docId) {
-        ModelAndView view = new ModelAndView("file-preview");
-        view.addObject("docId", docId);
-
-        return view;
-    }
-
-//    @GetMapping(value = "/showDocumentPreview", produces = MediaType.MULTIPART_FORM_DATA_VALUE)
-//    public ResponseEntity<byte[]> getImage(@RequestParam(name = "docId") Long docId) throws IOException {
+//    @GetMapping("/showDocumentPreview")
+//    public ModelAndView showDocumentPreview(@RequestParam(name = "docId") Long docId) {
+//        ModelAndView view = new ModelAndView("file-preview");
+//        view.addObject("docId", docId);
 //
-//        byte[] docContent = documentService.getDocument(docId).getFile();
-//        final HttpHeaders headers = new HttpHeaders();
-//        headers.setContentType(MediaType.MULTIPART_FORM_DATA);
-//        return new ResponseEntity<byte[]>(docContent, headers, HttpStatus.OK);
+//        return view;
 //    }
+
+    @GetMapping(value = "/showDocumentPreview", produces = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<byte[]> getImage(@RequestParam(name = "docId") Long docId) throws IOException {
+
+        byte[] docContent = documentService.getDocument(docId).getFile();
+        final HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.MULTIPART_FORM_DATA);
+        return new ResponseEntity<byte[]>(docContent, headers, HttpStatus.OK);
+    }
 
     @GetMapping(value = "/download")
     public void getFile(@RequestParam(name = "docId") Long docId, HttpServletResponse response) {
