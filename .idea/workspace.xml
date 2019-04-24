@@ -8,166 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6d045e41-97c4-4c60-b877-38db82b16f16" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/istepien/controller/DocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/istepien/controller/DocumentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/istepien/model/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/istepien/model/Document.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/allDocuments-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/allDocuments-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/document-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/document-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/textMessages-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/textMessages-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/config/DataSourceConfig$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/config/DataSourceConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/config/SecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/config/SecurityWebInitializer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/config/WebConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/config/WebInitializer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/controller/CommentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/controller/DocumentController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/controller/DocumentController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/controller/DocumentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/controller/HomeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/controller/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/controller/MessageController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/dao/CommentDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/dao/CommentDaoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/dao/DocumentDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/dao/DocumentDaoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/dao/MessageDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/dao/MessageDaoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/dao/RoleDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/dao/RoleDaoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/dao/UserDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/dao/UserDaoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/model/Comment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/model/Document.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/model/Message.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/model/Role.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/service/CommentService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/service/CommentServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/service/DocumentService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/service/DocumentServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/service/MessageService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/service/MessageServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/service/RoleService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/service/RoleServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/service/SecurityServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/service/UserDetailsServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/com/istepien/service/UserServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/classes/style2.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/FastInfoset-1.2.15.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/antlr-2.7.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/aspectjrt-1.8.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/attoparser-2.0.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/bootstrap-4.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/byte-buddy-1.9.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/classmate-1.3.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/dom4j-2.1.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/h2-1.3.176.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/hibernate-commons-annotations-5.1.0.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/hibernate-core-5.4.1.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/hibernate-entitymanager-5.4.1.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/hsqldb-1.8.0.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/istack-commons-runtime-3.0.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/jandex-2.0.5.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/javassist-3.24.0-GA.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/javax.activation-api-1.2.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/javax.persistence-api-2.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/jaxb-api-2.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/jaxb-runtime-2.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/jboss-logging-3.3.2.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/jboss-transaction-api_1.2_spec-1.1.1.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/jcl-over-slf4j-1.7.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/jquery-3.0.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/popper.js-1.14.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/slf4j-api-1.6.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/slf4j-simple-1.6.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/spring-aop-5.1.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/spring-beans-5.1.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/spring-context-5.1.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/spring-core-5.1.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/spring-data-commons-1.9.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/spring-data-jpa-1.7.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/spring-expression-5.1.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/spring-jcl-5.1.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/spring-jdbc-5.1.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/spring-orm-5.1.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/spring-security-config-5.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/spring-security-core-5.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/spring-security-web-5.1.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/spring-tx-5.1.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/spring-web-5.1.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/spring-webmvc-5.1.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/stax-ex-1.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/thymeleaf-3.0.9.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/thymeleaf-extras-springsecurity5-3.0.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/thymeleaf-spring5-3.0.9.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/txw2-2.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/lib/unbescape-1.1.5.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/views/add-comment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/views/add-document.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/views/allDocuments-list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/views/comments-list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/views/comments-toBeDeleted.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/views/document-list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/views/documents-toBeDeleted.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/views/file-preview.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/views/home.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/views/login-page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/views/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/views/sendMessage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/views/textMessages-list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/views/update-comment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/views/update-document.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/views/user-list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/WEB-INF/views/usersToBeUpgraded-list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/resources/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DocumentExplorer/resources/style2.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/config/DataSourceConfig$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/config/DataSourceConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/config/SecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/config/SecurityWebInitializer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/config/WebConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/config/WebInitializer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/controller/CommentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/controller/DocumentController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/controller/DocumentController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/controller/DocumentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/controller/HomeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/controller/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/controller/MessageController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/dao/CommentDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/dao/CommentDaoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/dao/DocumentDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/dao/DocumentDaoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/dao/MessageDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/dao/MessageDaoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/dao/RoleDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/dao/RoleDaoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/dao/UserDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/dao/UserDaoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/model/Comment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/model/Document.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/model/Message.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/model/Role.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/service/CommentService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/service/CommentServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/service/DocumentService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/service/DocumentServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/service/MessageService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/service/MessageServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/service/RoleService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/service/RoleServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/service/SecurityServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/service/UserDetailsServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/istepien/service/UserServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/style2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitignore" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -300,7 +141,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/textMessages-list.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="101">
@@ -314,11 +155,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/usersToBeUpgraded-list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="84" column="29" lean-forward="true" selection-start-line="84" selection-start-column="29" selection-end-line="84" selection-end-column="29" />
+            <state relative-caret-position="221">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -441,7 +282,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="636" />
     <option name="y" value="19" />
     <option name="width" value="736" />
@@ -567,7 +408,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556091065775" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556091644548" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -745,18 +586,18 @@
       <workItem from="1554874320135" duration="440000" />
       <workItem from="1555152425930" duration="24096000" />
       <workItem from="1555400014477" duration="740000" />
-      <workItem from="1556089242685" duration="1803000" />
+      <workItem from="1556089242685" duration="2544000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75380000" />
+    <option name="totallyTimeSpent" value="76121000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2934947" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2934947" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -766,7 +607,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4222586" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.4222586" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1076,13 +917,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/istepien/controller/CommentController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
@@ -1255,19 +1089,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/usersToBeUpgraded-list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="84" column="29" lean-forward="true" selection-start-line="84" selection-start-column="29" selection-end-line="84" selection-end-column="29" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/textMessages-list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="101">
@@ -1276,6 +1097,26 @@
             <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/usersToBeUpgraded-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
