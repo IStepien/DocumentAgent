@@ -108,7 +108,7 @@ public class DocumentController {
         document.setUser(userService.getUserByName(document.getUser().getUsername()));
         document.setDocDateAdded(documentService.getDocument(document.getDocId()).getDocDateAdded());
         document.setDocLastModified(LocalDate.now());
-        document.setLastModifiedBy(principal.getName());
+        document.setDocLastModifiedBy(principal.getName());
         documentService.saveDocument(document);
 
         return "home";

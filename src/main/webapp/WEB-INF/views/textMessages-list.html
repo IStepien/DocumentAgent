@@ -84,10 +84,10 @@
                     <th></th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr th:if="${#lists.isEmpty(textMessages)}">
+                <td th:if="${#lists.isEmpty(textMessages)}">
                     No messages available
-                </tr>
+                </td>
+                <tbody>
                 <tr th:each="message : ${textMessages}">
                     <td th:text="${message.messageText}"/>
                     <td th:text="${message.user.username}"/>
