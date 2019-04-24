@@ -27,6 +27,8 @@ public class Document {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "last_modified")
     private LocalDate docLastModified;
+    @Column(name ="lastModifiedBy")
+    private String lastModifiedBy;
     @Column(name = "file")
     @Lob
     private byte[] file;
@@ -100,6 +102,14 @@ public class Document {
 
     public void setDocLastModified(LocalDate docLastModified) {
         this.docLastModified = docLastModified;
+    }
+
+    public String getLastModifiedBy() {
+        return lastModifiedBy;
+    }
+
+    public void setLastModifiedBy(String lastModifiedBy) {
+        this.lastModifiedBy = lastModifiedBy;
     }
 
     public byte[] getFile() {

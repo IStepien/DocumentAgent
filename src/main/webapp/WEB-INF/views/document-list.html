@@ -127,7 +127,7 @@
                     <td th:text="${document.docDateAdded}"/>
                     <td th:text="${document.docLastModified}"/>
                     <td th:text="${document.user.username}"/>
-                    <td> ... </td>
+                    <td th:text="${document.lastModifiedBy}" />
                     <td><a th:href="@{/documents/formForUpdateDocument(docId=${document.docId})}">modify</a></td>
                     <td><a th:href="@{/documents/showDocumentPreview(docId=${document.docId})}">preview doc</a>
                     <td><a th:href="@{/documents/download(docId=${document.docId})}"> download</a></td>
