@@ -129,8 +129,8 @@
                     <td th:text="${document.user.username}"/>
                     <td th:text="${document.docLastModifiedBy}" />
                     <td><a th:href="@{/documents/formForUpdateDocument(docId=${document.docId})}">modify</a></td>
-                    <td><a th:href="@{/documents/showDocumentPreview(docId=${document.docId})}">preview doc</a>
-                    <td><a th:href="@{/documents/download(docId=${document.docId})}"> download</a></td>
+                    <td><a th:href="@{/documents/showDocumentPreview(docId=${document.docId},viewType=prev)}">preview doc</a>
+                    <td><a th:href="@{/documents/showDocumentPreview(docId=${document.docId},viewType=dow)}">download</a>
                     <div sec:authorize="hasRole('ROLE_ADMIN')">
                         <td><a th:href="@{/documents/deleteDocument(docId=${document.docId})}">delete</a></td>
                     </div>

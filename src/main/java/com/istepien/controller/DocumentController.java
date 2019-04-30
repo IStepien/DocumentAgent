@@ -53,12 +53,16 @@ public class DocumentController {
     }
 
     @PostMapping("/saveDocument")
-    public String saveDocument(@ModelAttribute("document") Document document, Principal principal) {
-
+    public String saveDocument(@RequestParam("file") MultipartFile file,
+                               @ModelAttribute("document") Document document,
+                               Principal principal) throws IOException {
 
         User current = userService.getUserByName(principal.getName());
         document.setUser(current);
         document.setDocDateAdded(LocalDate.now());
+
+        document.setFile(file.getBytes());
+
         documentService.saveDocument(document);
 
         return "home";
@@ -117,18 +121,28 @@ public class DocumentController {
 //    @GetMapping("/showDocumentPreview")
 //    public ModelAndView showDocumentPreview(@RequestParam(name = "docId") Long docId) {
 //        ModelAndView view = new ModelAndView("file-preview");
-//        view.addObject("docId", docId);
+//
+//        Document document = documentService.getDocument(docId);
+//        view.addObject("doc", document.getFile());
 //
 //        return view;
 //    }
 
-    @GetMapping(value = "/showDocumentPreview", produces = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<byte[]> getImage(@RequestParam(name = "docId") Long docId) throws IOException {
+    @GetMapping("/showDocumentPreview")
+    public ResponseEntity<byte[]> getImage(@RequestParam(name = "docId") Long docId,
+                                           @RequestParam(name = "viewType") String downloadOrPreview) throws IOException {
 
         byte[] docContent = documentService.getDocument(docId).getFile();
         final HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.MULTIPART_FORM_DATA);
-        return new ResponseEntity<byte[]>(docContent, headers, HttpStatus.OK);
+        headers.setContentType(MediaType.parseMediaType("application/pdf"));
+
+        // inline - wyświetli plik w przeglądarce, attachment - pobierze jako plik
+        String headerViewType = "prev".equals(downloadOrPreview)
+                ? "inline"
+                : "attachment";
+        headers.add("Content-Disposition", headerViewType + "; filename=" + "example.pdf");
+
+        return new ResponseEntity<>(docContent, headers, HttpStatus.OK);
     }
 
     @GetMapping(value = "/download")
