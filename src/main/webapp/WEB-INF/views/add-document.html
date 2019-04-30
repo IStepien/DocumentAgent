@@ -78,10 +78,11 @@
         </div>
         <div class="col-sm-8">
             <div class="form">
-            <form action="#" th:action="@{saveDocument}" th:object="${document}" method="post">
+            <form action="#" th:action="@{saveDocument}" th:object="${document}" method="post" enctype="multipart/form-data">
                 <input type="text" th:field="*{docTitle}" th:required="required" placeholder="Title"/></p>
                 <input type="text" th:field="*{docDescription}" placeholder="Description" /></p>
-                <input type="file" th:field="*{file}" name="file" th:required="required" placeholder="File" th:action="@{saveAttachment}"/></p>
+                <!--<input type="file" th:field="*{file}" name="file" th:required="required" placeholder="File" th:action="@{saveAttachment}"/></p>-->
+                <input type="file" name="file" th:required="required" placeholder="File" /></p>
                 <p><input type="submit" value="Add document" /> <input type="reset" value="Reset" /></p>
             </form>
             </div>
