@@ -7,8 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d045e41-97c4-4c60-b877-38db82b16f16" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/documents-toBeDeleted.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/documents-toBeDeleted.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,7 +45,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/documents-toBeDeleted.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
@@ -59,6 +58,15 @@
                 <element signature="n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="51" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -105,7 +113,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login-page.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/istepien/controller/MessageController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sendMessage.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/update-comment.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/update-document.html" />
@@ -125,6 +132,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/textMessages-list.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/istepien/config/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/documents-toBeDeleted.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.html" />
       </list>
     </option>
   </component>
@@ -478,12 +486,12 @@
       <workItem from="1555400014477" duration="740000" />
       <workItem from="1556089242685" duration="2544000" />
       <workItem from="1556653103748" duration="3492000" />
-      <workItem from="1557194897153" duration="1349000" />
+      <workItem from="1557194897153" duration="1655000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80996000" />
+    <option name="totallyTimeSpent" value="81302000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -677,13 +685,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
           <caret line="8" column="95" selection-start-line="8" selection-start-column="95" selection-end-line="8" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="75" selection-start-line="10" selection-start-column="75" selection-end-line="10" selection-end-column="75" />
         </state>
       </provider>
     </entry>
@@ -967,6 +968,13 @@
             <element signature="n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="51" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
         </state>
       </provider>
     </entry>
