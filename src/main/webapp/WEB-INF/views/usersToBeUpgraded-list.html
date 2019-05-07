@@ -91,7 +91,7 @@
                 <tbody>
                 <tr th:each=" username: ${toBeUpgraded}">
                     <td th:text="${username}"/>
-                    <td><a th:href="@{/messages/upgradeRole(username=${username})}">delete</a></td>
+                    <td><a th:href="@{/messages/upgradeRole(username=${username})}">upgrade</a></td>
                 </tr>
                 </tbody>
 
